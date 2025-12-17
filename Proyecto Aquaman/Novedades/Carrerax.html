@@ -1,0 +1,1466 @@
+<!DOCTYPE html><!-- Last Published: Fri Oct 17 2025 10:30:54 GMT+0000 (Coordinated Universal Time) -->
+<html "
+    data-wf-site="6837014cb4393ef80839a179" data-wf-intellimize-customer-id="117630511" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Aquaman|Carrera</title>
+    <link href="../Css/index1.css" rel="stylesheet" type="text/css" />
+    <link href="../Css/index2.css" rel="stylesheet" type="text/css" />
+                <link href="https://cdn.prod.website-files.com/6837014cb4393ef80839a179/css/heimdall-power.webflow.shared.5f686b46d.min.css" rel="stylesheet" type="text/css"/>
+        <link href="https://cdn.prod.website-files.com/6837014cb4393ef80839a179/css/heimdall-power.webflow.6849d129661dc6ec50bc8209-ff4041413.min.css" rel="stylesheet" type="text/css"/>
+        <link href="IM/Logo.png" rel="shortcut icon" type="image/png" />
+<link rel="icon" href="IM/logo.png" sizes="32x32" type="image/png" />
+        <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --naranja: #FF6B00;
+            --naranja-oscuro: #E65C00;
+            --naranja-claro: #FF8C42;
+            --naranja-suave: #FFF3E8;
+            --negro: #000000;
+            --negro-claro: #1A1A1A;
+            --negro-suave: #2D2D2D;
+            --blanco: #FFFFFF;
+            --gris-claro: #F8F9FA;
+            --gris-medio: #E9ECEF;
+        }
+        
+        body {
+            background-color: var(--blanco);
+            color: var(--negro);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Moderno */
+        header {
+            background-color: var(--negro);
+            color: var(--blanco);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            border-bottom: 4px solid var(--naranja);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            animation: fadeInLeft 1s ease;
+        }
+        
+        .logo-icon {
+            font-size: 2.8rem;
+            color: var(--naranja);
+            filter: drop-shadow(0 0 5px rgba(255, 107, 0, 0.5));
+        }
+        
+        .logo-text h1 {
+            font-size: 1.9rem;
+            margin-bottom: 5px;
+            color: var(--blanco);
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        
+        .logo-text p {
+            font-size: 0.85rem;
+            opacity: 0.9;
+            color: var(--gris-claro);
+            font-weight: 300;
+        }
+        
+        /* Hero Section Mejorada */
+        .hero {
+            background: linear-gradient(135deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.7) 100%), url('https://images.unsplash.com/photo-1552674605-db6ffd8facb5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--blanco);
+            padding: 140px 0 100px;
+            text-align: center;
+            margin-bottom: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(255,107,0,0.1) 0%, transparent 50%);
+            z-index: 1;
+        }
+        
+        .hero .container {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero h2 {
+            font-size: 3.5rem;
+            margin-bottom: 25px;
+            color: var(--blanco);
+            font-weight: 800;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+            animation: fadeInUp 1s ease;
+        }
+        
+        .hero h2 span {
+            color: var(--naranja);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .hero h2 span::after {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--naranja);
+            transform: scaleX(0);
+            transform-origin: right;
+            animation: underlineExpand 1s ease 1s forwards;
+        }
+        
+        .hero p {
+            font-size: 1.4rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            opacity: 0.95;
+            color: var(--gris-claro);
+            animation: fadeInUp 1.2s ease;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--naranja), var(--naranja-oscuro));
+            color: var(--blanco);
+            padding: 18px 45px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.3rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 25px rgba(255, 107, 0, 0.4);
+            border: none;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 1.5s ease;
+            letter-spacing: 0.5px;
+        }
+        
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(255, 107, 0, 0.6);
+        }
+        
+        .cta-button:hover::before {
+            left: 100%;
+        }
+        
+        /* Sections */
+        section {
+            padding: 80px 0;
+            position: relative;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.8rem;
+            color: var(--negro);
+            display: inline-block;
+            padding-bottom: 15px;
+            font-weight: 700;
+            position: relative;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 120px;
+            height: 5px;
+            background: linear-gradient(90deg, var(--naranja), var(--naranja-oscuro));
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 3px;
+        }
+        
+        /* Distancias - Tarjetas Mejoradas */
+        .distances-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+        
+        .distance-card {
+            background-color: var(--blanco);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            border: 2px solid var(--gris-medio);
+            position: relative;
+            transform: translateY(0);
+        }
+        
+        .distance-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--naranja), var(--naranja-oscuro));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+        
+        .distance-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            border-color: var(--naranja);
+        }
+        
+        .distance-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .card-header {
+            background-color: var(--negro);
+            color: var(--blanco);
+            padding: 25px 20px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .card-header h3 {
+            font-size: 2rem;
+            margin-bottom: 8px;
+            color: var(--blanco);
+            font-weight: 700;
+        }
+        
+        .card-header p {
+            color: var(--naranja);
+            font-weight: 600;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+        }
+        
+        .card-body {
+            padding: 30px;
+        }
+        
+        .card-body ul {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+        
+        .card-body li {
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+            color: var(--negro);
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .card-body li:last-child {
+            border-bottom: none;
+        }
+        
+        .card-body li i {
+            color: var(--naranja);
+            margin-right: 15px;
+            font-size: 1.2rem;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+        
+        .card-body strong {
+            color: var(--negro);
+        }
+        
+        /* Formulario de Inscripción Mejorado */
+        .registration-section {
+            background-color: var(--gris-claro);
+            border-radius: 20px;
+            padding: 60px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            margin-bottom: 80px;
+            border: 2px solid var(--negro);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .registration-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(90deg, var(--naranja), var(--naranja-oscuro));
+        }
+        
+        .registration-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+        
+        .pricing-table {
+            background: var(--blanco);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 25px 0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        th, td {
+            padding: 18px 20px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        
+        th {
+            background-color: var(--negro);
+            color: var(--blanco);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        tr:hover {
+            background-color: var(--naranja-suave);
+        }
+        
+        .highlight {
+            background-color: rgba(255, 107, 0, 0.1);
+            font-weight: 700;
+            color: var(--negro);
+        }
+        
+        .highlight td:last-child {
+            color: var(--naranja);
+            font-size: 1.1rem;
+        }
+        
+        /* Formulario de Inscripción */
+        .registration-form-container {
+            background: var(--blanco);
+            border-radius: 15px;
+            padding: 35px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+        }
+        
+        .form-title {
+            color: var(--negro);
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--naranja);
+            font-size: 1.8rem;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--negro);
+            font-weight: 600;
+            font-size: 1rem;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid var(--gris-medio);
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s;
+            background-color: var(--blanco);
+            color: var(--negro);
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--naranja);
+            box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.2);
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .submit-btn {
+            background: linear-gradient(135deg, var(--naranja), var(--naranja-oscuro));
+            color: var(--blanco);
+            border: none;
+            padding: 16px 40px;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+            margin-top: 10px;
+            box-shadow: 0 5px 15px rgba(255, 107, 0, 0.3);
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 107, 0, 0.4);
+        }
+        
+        /* Sección de Premios Mejorada */
+        .prizes-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .prize-category {
+            background-color: var(--blanco);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border: 2px solid var(--gris-medio);
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .prize-category::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--naranja), var(--naranja-oscuro));
+        }
+        
+        .prize-category:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+            border-color: var(--naranja);
+        }
+        
+        .prize-category h4 {
+            color: var(--negro);
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--naranja);
+            font-size: 1.5rem;
+        }
+        
+        /* Kit Section Mejorada */
+        .kit-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-top: 40px;
+        }
+        
+        .kit-info {
+            padding: 20px;
+        }
+        
+        .kit-images {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+        
+        .kit-image-placeholder {
+            background: linear-gradient(135deg, var(--gris-claro), var(--gris-medio));
+            border: 3px dashed var(--naranja);
+            border-radius: 15px;
+            height: 220px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: var(--negro);
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .kit-image-placeholder::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255,107,0,0.1), transparent);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+        
+        .kit-image-placeholder:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(255, 107, 0, 0.2);
+            border-color: var(--negro);
+        }
+        
+        .kit-image-placeholder:hover::before {
+            opacity: 1;
+        }
+        
+        .kit-image-placeholder i {
+            font-size: 3.5rem;
+            color: var(--naranja);
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 5px rgba(255, 107, 0, 0.3));
+        }
+        
+        .kit-image-placeholder p {
+            color: var(--negro);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+        
+        .kit-details {
+            margin-top: 30px;
+        }
+        
+        .kit-item-detail {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            padding: 20px;
+            background: var(--gris-claro);
+            border-radius: 12px;
+            border-left: 5px solid var(--naranja);
+            transition: all 0.3s;
+        }
+        
+        .kit-item-detail:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        .kit-item-detail i {
+            font-size: 2.5rem;
+            color: var(--naranja);
+            margin-right: 25px;
+            min-width: 60px;
+            text-align: center;
+        }
+        
+        /* Footer Mejorado */
+        footer {
+            background-color: var(--negro);
+            color: var(--blanco);
+            padding: 70px 0 30px;
+            border-top: 5px solid var(--naranja);
+            position: relative;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 20%, rgba(255,107,0,0.1) 0%, transparent 50%);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 50px;
+            margin-bottom: 50px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .footer-section h3 {
+            font-size: 1.6rem;
+            margin-bottom: 25px;
+            color: var(--naranja);
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--naranja);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #444;
+            color: #aaa;
+            font-size: 0.95rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Animaciones */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes underlineExpand {
+            from {
+                transform: scaleX(0);
+            }
+            to {
+                transform: scaleX(1);
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 1100px) {
+            .registration-info {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .kit-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+            
+            .registration-section {
+                padding: 40px 25px;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .distances-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .kit-images {
+                grid-template-columns: 1fr;
+            }
+            
+            .kit-image-placeholder {
+                height: 200px;
+            }
+        }
+        
+        /* Custom classes */
+        .naranja-text {
+            color: var(--naranja);
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        .mb-4 {
+            margin-bottom: 2rem;
+        }
+        
+        .mt-4 {
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="c-custom-code w-embed">
+    </div>
+    <div data-animation="default" class="c-navbar w-nav" data-easing2="ease-out-quint" data-easing="ease-out-quint"
+        navbar="" data-collapse="small" role="banner" data-no-scroll="1" data-duration="600">
+        <div class="c-nav_banner-collections w-dyn-list">
+            <div role="list" class="w-dyn-items">
+                <div nav-banner-wrapper="" role="listitem" class="w-dyn-item">
+                    <div nav-banner="" visible="" class="c-nav_banner"><button aria-label="Close banner"
+                            nav-banner-close="" class="c-nav_banner-close"><svg xmlns="http://www.w3.org/2000/svg"
+                                width="100%" viewBox="0 0 24 24" fill="none" class="c-nav_banner-close-icon">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M5.29289 5.29289C5.68342 4.90237 6.31658 4.90237 6.70711 5.29289L12 10.5858L17.2929 5.29289C17.6834 4.90237 18.3166 4.90237 18.7071 5.29289C19.0976 5.68342 19.0976 6.31658 18.7071 6.70711L13.4142 12L18.7071 17.2929C19.0976 17.6834 19.0976 18.3166 18.7071 18.7071C18.3166 19.0976 17.6834 19.0976 17.2929 18.7071L12 13.4142L6.70711 18.7071C6.31658 19.0976 5.68342 19.0976 5.29289 18.7071C4.90237 18.3166 4.90237 17.6834 5.29289 17.2929L10.5858 12L5.29289 6.70711C4.90237 6.31658 4.90237 5.68342 5.29289 5.29289Z"
+                                    fill="currentColor"></path>
+                            </svg></button>
+                        <div class="c-banner-rich w-richtext">
+                            <p>¿Sabias Sobre Nuestro Gran Torneo Internacional? <a
+                                    href="../Html/TorneoInternacional.html"
+                                    data-wf-native-id-path="b44c77b5-35a0-1203-d041-f8e5714c6975:06665424-1a99-85e4-6696-68e8ad26134e_instance-0"
+                                    data-wf-ao-click-engagement-tracking="true"
+                                    data-wf-element-id="06665424-1a99-85e4-6696-68e8ad26134e"
+                                    data-wf-cms-context="%5B%7B%22collectionId%22%3A%22688a7bde8ec0d002ab8d5cc2%22%2C%22itemId%22%3A%22688a7bf0e7374e29f32a954b%22%7D%5D"
+                                    data-wf-component-context="%5B%7B%22componentId%22%3A%22b44c77b5-35a0-1203-d041-f8e5714c694e%22%2C%22instanceId%22%3A%22b44c77b5-35a0-1203-d041-f8e5714c6975%22%7D%5D">
+                                    Conoce más aquí. </a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="c-nav-container">
+            <div class="c-overlay"></div><a
+                data-wf-native-id-path="b44c77b5-35a0-1203-d041-f8e5714c6975:b44c77b5-35a0-1203-d041-f8e5714c6950"
+                data-wf-ao-click-engagement-tracking="true" data-wf-element-id="b44c77b5-35a0-1203-d041-f8e5714c6950"
+                data-wf-component-context="%5B%7B%22componentId%22%3A%22b44c77b5-35a0-1203-d041-f8e5714c694e%22%2C%22instanceId%22%3A%22b44c77b5-35a0-1203-d041-f8e5714c6975%22%7D%5D"
+                href="../index.html" aria-current="page" class="c-nav_brand w-inline-block w--current" style="color: white; text-decoration: none;">INICIO
+                </a>
+            <nav role="navigation" class="c-nav_menu w-nav-menu">
+                <div nav-compress="" class="c-nav_links-wrapper cc-compress"><a
+                        data-wf-native-id-path="b44c77b5-35a0-1203-d041-f8e5714c6975:253987bb-7512-b51c-c327-7aae2b2b36cf:253987bb-7512-b51c-c327-7aae2b2b36c9"
+                        data-wf-ao-click-engagement-tracking="true"
+                        data-wf-element-id="253987bb-7512-b51c-c327-7aae2b2b36c9"
+                        data-wf-component-context="%5B%7B%22componentId%22%3A%22b44c77b5-35a0-1203-d041-f8e5714c694e%22%2C%22instanceId%22%3A%22b44c77b5-35a0-1203-d041-f8e5714c6975%22%7D%2C%7B%22componentId%22%3A%22253987bb-7512-b51c-c327-7aae2b2b36c9%22%2C%22instanceId%22%3A%22253987bb-7512-b51c-c327-7aae2b2b36cf%22%7D%5D"
+                        href="../Html/Conocenos.html" class="c-nav_link cc-text w-inline-block">
+                        <div>Conocenos</div>
+                    </a><a
+                        data-wf-native-id-path="b44c77b5-35a0-1203-d041-f8e5714c6975:74a75185-a9a2-67f9-ba02-59963e8a0436:253987bb-7512-b51c-c327-7aae2b2b36c9"
+                        data-wf-ao-click-engagement-tracking="true"
+                        data-wf-element-id="253987bb-7512-b51c-c327-7aae2b2b36c9"
+                        data-wf-component-context="%5B%7B%22componentId%22%3A%22b44c77b5-35a0-1203-d041-f8e5714c694e%22%2C%22instanceId%22%3A%22b44c77b5-35a0-1203-d041-f8e5714c6975%22%7D%2C%7B%22componentId%22%3A%22253987bb-7512-b51c-c327-7aae2b2b36c9%22%2C%22instanceId%22%3A%2274a75185-a9a2-67f9-ba02-59963e8a0436%22%7D%5D"
+                        href="../Html/Novedades.html" class="c-nav_link cc-text w-inline-block">
+                        <div>Novedades</div>
+                    </a><a
+                        data-wf-native-id-path="b44c77b5-35a0-1203-d041-f8e5714c6975:8424e097-3297-6e15-65df-5be07c1561ea:253987bb-7512-b51c-c327-7aae2b2b36c9"
+                        data-wf-ao-click-engagement-tracking="true"
+                        data-wf-element-id="253987bb-7512-b51c-c327-7aae2b2b36c9"
+                        data-wf-component-context="%5B%7B%22componentId%22%3A%22b44c77b5-35a0-1203-d041-f8e5714c694e%22%2C%22instanceId%22%3A%22b44c77b5-35a0-1203-d041-f8e5714c6975%22%7D%2C%7B%22componentId%22%3A%22253987bb-7512-b51c-c327-7aae2b2b36c9%22%2C%22instanceId%22%3A%228424e097-3297-6e15-65df-5be07c1561ea%22%7D%5D"
+                        href="../Html/TorneoInternacional.html" class="c-nav_link cc-text w-inline-block">
+                        <div></div>
+                        <div aria-hidden="">Torneo Internacional</div>
+                    </a><a
+                        data-wf-native-id-path="b44c77b5-35a0-1203-d041-f8e5714c6975:5745546d-7b67-d10b-30e5-4b2b3eb5f449:253987bb-7512-b51c-c327-7aae2b2b36c9"
+                        data-wf-ao-click-engagement-tracking="true"
+                        data-wf-element-id="253987bb-7512-b51c-c327-7aae2b2b36c9"
+                        data-wf-component-context="%5B%7B%22componentId%22%3A%22b44c77b5-35a0-1203-d041-f8e5714c694e%22%2C%22instanceId%22%3A%22b44c77b5-35a0-1203-d041-f8e5714c6975%22%7D%2C%7B%22componentId%22%3A%22253987bb-7512-b51c-c327-7aae2b2b36c9%22%2C%22instanceId%22%3A%225745546d-7b67-d10b-30e5-4b2b3eb5f449%22%7D%5D"
+                        href="/about" class="c-nav_link cc-text w-inline-block">
+                        <div></div>
+                        <div aria-hidden=""></div>
+                    </a></div>
+                <div class="c-nav_divider"></div>
+                <div class="c-nav_links-wrapper cc-ext"><a
+                        data-wf-native-id-path="b44c77b5-35a0-1203-d041-f8e5714c6975:b44c77b5-35a0-1203-d041-f8e5714c6960"
+                        data-wf-ao-click-engagement-tracking="true"
+                        data-wf-element-id="b44c77b5-35a0-1203-d041-f8e5714c6960"
+                        data-wf-component-context="%5B%7B%22componentId%22%3A%22b44c77b5-35a0-1203-d041-f8e5714c694e%22%2C%22instanceId%22%3A%22b44c77b5-35a0-1203-d041-f8e5714c6975%22%7D%5D"
+                        href="../Html/Inscripcion.html" target="_blank"
+                        class="c-nav_link cc-ext w-inline-block">
+                        <div>Inscripcion</div>
+                        <div class="c-nav_link-arrow"><svg xmlns="http://www.w3.org/2000/svg" width="100%"
+                                viewBox="0 0 7 8" fill="none" class="c-custom-svg">
+                                <path
+                                    d="M6.85291 6.07324H5.85291V2.28027L0.706421 7.42676L-0.000610352 6.71973L5.14587 1.57324H1.35291V0.573242H6.85291V6.07324Z"
+                                    fill="currentColor"></path>
+                            </svg></div>
+                    </a><a
+                        data-wf-native-id-path="b44c77b5-35a0-1203-d041-f8e5714c6975:b44c77b5-35a0-1203-d041-f8e5714c6966"
+                        data-wf-ao-click-engagement-tracking="true"
+                        data-wf-element-id="b44c77b5-35a0-1203-d041-f8e5714c6966"
+                        data-wf-component-context="%5B%7B%22componentId%22%3A%22b44c77b5-35a0-1203-d041-f8e5714c694e%22%2C%22instanceId%22%3A%22b44c77b5-35a0-1203-d041-f8e5714c6975%22%7D%5D"
+                        href="../Html/Modalidades.html" target="_blank" class="c-nav_link cc-ext w-inline-block">
+                        <div>Modalidades</div>
+                        <div class="c-nav_link-arrow"><svg xmlns="http://www.w3.org/2000/svg" width="100%"
+                                viewBox="0 0 7 8" fill="none" class="c-custom-svg">
+                                <path
+                                    d="M6.85291 6.07324H5.85291V2.28027L0.706421 7.42676L-0.000610352 6.71973L5.14587 1.57324H1.35291V0.573242H6.85291V6.07324Z"
+                                    fill="currentColor"></path>
+                            </svg></div>
+                    </a></div><a
+                    data-wf-native-id-path="b44c77b5-35a0-1203-d041-f8e5714c6975:fa92ca77-095b-fded-6556-df5321b06c9f"
+                    data-wf-ao-click-engagement-tracking="true"
+                    data-wf-element-id="fa92ca77-095b-fded-6556-df5321b06c9f"
+                    data-wf-component-context="%5B%7B%22componentId%22%3A%22b44c77b5-35a0-1203-d041-f8e5714c694e%22%2C%22instanceId%22%3A%22b44c77b5-35a0-1203-d041-f8e5714c6975%22%7D%5D"
+                    href="../Html/Contactos.html" class="c-contact-btn cc-mb w-inline-block">
+                    <div>Contactos</div>
+                    <div class="c-button_arrow"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 12 12"
+                            fill="none" class="c-custom-svg">
+                            <path
+                                d="M1 5.25C0.585786 5.25 0.25 5.58579 0.25 6C0.25 6.41421 0.585786 6.75 1 6.75V5.25ZM11.5303 6.53033C11.8232 6.23744 11.8232 5.76256 11.5303 5.46967L6.75736 0.696699C6.46447 0.403806 5.98959 0.403806 5.6967 0.696699C5.40381 0.989593 5.40381 1.46447 5.6967 1.75736L9.93934 6L5.6967 10.2426C5.40381 10.5355 5.40381 11.0104 5.6967 11.3033C5.98959 11.5962 6.46447 11.5962 6.75736 11.3033L11.5303 6.53033ZM1 6V6.75H11V6V5.25H1V6Z"
+                                fill="currentColor"></path>
+                        </svg></div>
+                </a>
+            </nav>
+            <div class="c-menu-btn w-nav-button">
+                <div class="c-menu-btn_svg w-embed">
+                    <button class="menu-button" id="menuButton">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Orange background -->
+                            <path
+                                d="M0 4C0 1.79086 1.79086 0 4 0H28C30.2091 0 32 1.79086 32 4V28C32 30.2091 30.2091 32 28 32H4C1.79086 32 0 30.2091 0 28V4Z"
+                                fill="#FF5C39" />
+
+                            <!-- Top line -->
+                            <path class="menu-line line-top" d="M6 12H26" stroke="#111113" stroke-linecap="square" />
+
+                            <!-- Middle line -->
+                            <path class="menu-line line-middle" d="M11 16H21" stroke="#111113"
+                                stroke-linecap="square" />
+
+                            <!-- Bottom line -->
+                            <path class="menu-line line-bottom" d="M6 20H26" stroke="#111113" stroke-linecap="square" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div><a data-wf-native-id-path="b44c77b5-35a0-1203-d041-f8e5714c6975:b44c77b5-35a0-1203-d041-f8e5714c696e"
+            data-wf-ao-click-engagement-tracking="true" data-wf-element-id="b44c77b5-35a0-1203-d041-f8e5714c696e"
+            data-wf-component-context="%5B%7B%22componentId%22%3A%22b44c77b5-35a0-1203-d041-f8e5714c694e%22%2C%22instanceId%22%3A%22b44c77b5-35a0-1203-d041-f8e5714c6975%22%7D%5D"
+            href="Html/contactos.html" data-wf-event-ids="157053889-157053897" class="c-contact-btn w-inline-block">
+            <div>Contactos</div>
+            <div class="c-button_arrow"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 12 12"
+                    fill="none" class="c-custom-svg">
+                    <path
+                        d="M1 5.25C0.585786 5.25 0.25 5.58579 0.25 6C0.25 6.41421 0.585786 6.75 1 6.75V5.25ZM11.5303 6.53033C11.8232 6.23744 11.8232 5.76256 11.5303 5.46967L6.75736 0.696699C6.46447 0.403806 5.98959 0.403806 5.6967 0.696699C5.40381 0.989593 5.40381 1.46447 5.6967 1.75736L9.93934 6L5.6967 10.2426C5.40381 10.5355 5.40381 11.0104 5.6967 11.3033C5.98959 11.5962 6.46447 11.5962 6.75736 11.3033L11.5303 6.53033ZM1 6V6.75H11V6V5.25H1V6Z"
+                        fill="currentColor"></path>
+                </svg></div>
+        </a>
+    </div>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="container">
+            <h2>¡Haz vibrar las calles de <span>Cúcuta</span>!</h2>
+            <p>3 de mayo de 2026 - Una carrera para runners, familias y todos los amantes del deporte. <span class="naranja-text">Sin sacrificio no hay victoria.</span></p>
+            <a href="#inscripcion" class="cta-button">¡Iniciemos!</a>
+        </div>
+    </section>
+
+    <!-- Distances Section -->
+    <section id="distancias">
+        <div class="container">
+            <div class="section-title">
+                <h2>Distancias y <span class="naranja-text">Categorías</span></h2>
+            </div>
+            
+            <div class="distances-grid">
+                <!-- 800 mts Card -->
+                <div class="distance-card">
+                    <div class="card-header">
+                        <h3>800 <span class="naranja-text">mts</span></h3>
+                        <p>Aquaman Kids</p>
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            <li><i class="fas fa-child"></i> <strong>Edad:</strong> 6-9 años</li>
+                            <li><i class="fas fa-medal"></i> <strong>Premios por género:</strong></li>
+                            <li><span class="naranja-text">1° puesto:</span> $100.000 COP</li>
+                            <li><span class="naranja-text">2° puesto:</span> $70.000 COP</li>
+                            <li><span class="naranja-text">3° puesto:</span> $50.000 COP</li>
+                            <li><i class="fas fa-users"></i> Papitos pueden acompañar</li>
+                        </ul>
+                        <p><strong>Diseñada para nuestros mayores tesoros que están iniciando o quieren asumir el reto de dar gracias a Papito Dios.</strong></p>
+                    </div>
+                </div>
+                
+                <!-- 2.5K Card -->
+                <div class="distance-card">
+                    <div class="card-header">
+                        <h3>2.5<span class="naranja-text">K</span></h3>
+                        <p>Carrera Familiar</p>
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            <li><i class="fas fa-home"></i> <strong>Participación en familia</strong></li>
+                            <li><i class="fas fa-user-friends"></i> Con amigos y seres queridos</li>
+                            <li><i class="fas fa-walking"></i> Para todos los que estamos iniciando</li>
+                            <li><i class="fas fa-heart"></i> No importa si caminas o trotas</li>
+                            <li><i class="fas fa-users"></i> Ve solo o con tu familia y amigos</li>
+                        </ul>
+                        <p><strong>Lo importante es celebrar hacer ejercicio y dar gracias a <span class="naranja-text">Papito Dios</span>.</strong></p>
+                    </div>
+                </div>
+                
+                <!-- 5K Card -->
+                <div class="distance-card">
+                    <div class="card-header">
+                        <h3>5<span class="naranja-text">K</span></h3>
+                        <p>Runners</p>
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            <li><i class="fas fa-running"></i> <strong>Para los amantes de este deporte</strong></li>
+                            <li><i class="fas fa-tachometer-alt"></i> Exigencia y romper los límites</li>
+                            <li><i class="fas fa-stopwatch"></i> Carrera contra reloj avanzada</li>
+                            <li><i class="fas fa-medal"></i> <strong>Categorías y premios:</strong></li>
+                            <li><strong>Infantil (10-13 años):</strong> $100K / $70K / $50K</li>
+                            <li><strong>Juvenil (14-17 años):</strong> $100K / $70K / $50K</li>
+                            <li><strong>Abierta (18+ años):</strong> $400K / $300K / $200K</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- Rutas Section - Solo Imágenes -->
+<section id="rutas" class="blanco-bg">
+    <div class="container">
+        <div class="section-title">
+            <h2>Rutas por <span class="naranja-text">Categoría</span></h2>
+        </div>
+        
+        <div class="rutas-grid">
+            <!-- Ruta 1: Aquaman Kids -->
+            <div class="ruta-item">
+                <div class="ruta-imagen-container">
+                    <div class="ruta-badge" style="position: absolute; top: 20px; right: 20px; background: var(--naranja); color: var(--blanco); padding: 8px 20px; border-radius: 20px; font-weight: 700; z-index: 2;">
+                        800 mts
+                    </div>
+                    <div class="ruta-imagen-placeholder" style="width: 100%; height: 400px; background: linear-gradient(135deg, var(--gris-claro), var(--gris-medio)); border: 3px solid var(--naranja); border-radius: 15px; position: relative; overflow: hidden; display: flex; justify-content: center; align-items: center;">
+                        <!-- Reemplazar con imagen real -->
+                        <div style="text-align: center; padding: 20px;">
+<img src="../IM/800mts.jpeg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="ruta-titulo" style="text-align: center; margin-top: 20px;">
+                    <h3 style="color: var(--negro); font-size: 1.5rem;">Aquaman Kids <span class="naranja-text">(800m)</span></h3>
+                </div>
+            </div>
+            
+            <!-- Ruta 2: Familiar -->
+            <div class="ruta-item">
+                <div class="ruta-imagen-container">
+                    <div class="ruta-badge" style="position: absolute; top: 20px; right: 20px; background: var(--negro); color: var(--blanco); padding: 8px 20px; border-radius: 20px; font-weight: 700; z-index: 2;">
+                        2.5K
+                    </div>
+                    <div class="ruta-imagen-placeholder" style="width: 100%; height: 400px; background: linear-gradient(135deg, var(--gris-claro), var(--gris-medio)); border: 3px solid var(--negro); border-radius: 15px; position: relative; overflow: hidden; display: flex; justify-content: center; align-items: center;">
+                        <!-- Reemplazar con imagen real -->
+                        <div style="text-align: center; padding: 20px;">
+<img src="../IM/2.5k.jpeg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="ruta-titulo" style="text-align: center; margin-top: 20px;">
+                    <h3 style="color: var(--negro); font-size: 1.5rem;">Carrera Familiar <span class="naranja-text">(2.5K)</span></h3>
+                </div>
+            </div>
+            
+            <!-- Ruta 3: Runners -->
+            <div class="ruta-item">
+                <div class="ruta-imagen-container">
+                    <div class="ruta-badge" style="position: absolute; top: 20px; right: 20px; background: var(--naranja); color: var(--blanco); padding: 8px 20px; border-radius: 20px; font-weight: 700; z-index: 2;">
+                        5K
+                    </div>
+                    <div class="ruta-imagen-placeholder" style="width: 100%; height: 400px; background: linear-gradient(135deg, var(--gris-claro), var(--gris-medio)); border: 3px solid var(--naranja); border-radius: 15px; position: relative; overflow: hidden; display: flex; justify-content: center; align-items: center;">
+                        <!-- Reemplazar con imagen real -->
+                        <div style="text-align: center; padding: 20px;">
+<img src="../IM/5k.jpeg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="ruta-titulo" style="text-align: center; margin-top: 20px;">
+                    <h3 style="color: var(--negro); font-size: 1.5rem;">Carrera Runners <span class="naranja-text">(5K)</span></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Estilos para la sección de rutas */
+    .rutas-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+        margin-top: 40px;
+    }
+    
+    .ruta-item {
+        transition: transform 0.4s ease;
+    }
+    
+    .ruta-item:hover {
+        transform: translateY(-10px);
+    }
+    
+    .ruta-imagen-container {
+        position: relative;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .ruta-imagen-placeholder {
+        transition: all 0.4s ease;
+    }
+    
+    .ruta-imagen-placeholder:hover {
+        transform: scale(1.02);
+        box-shadow: 0 15px 40px rgba(255, 107, 0, 0.2);
+    }
+    
+    /* Para reemplazar con imágenes reales */
+    .ruta-imagen-placeholder img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 12px;
+    }
+    
+    /* Responsive */
+    @media (max-width: 1024px) {
+        .rutas-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .rutas-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .ruta-imagen-placeholder {
+            height: 350px;
+        }
+    }
+</style>
+
+<script>
+    // Script para reemplazar placeholders con imágenes reales
+    document.addEventListener('DOMContentLoaded', function() {
+        // Cuando tengas las imágenes reales, reemplaza los placeholders
+        // Ejemplo:
+        // const rutaKidsImg = document.querySelector('.ruta-item:nth-child(1) .ruta-imagen-placeholder');
+        // rutaKidsImg.innerHTML = '<img src="ruta-800m.jpg" alt="Ruta Aquaman Kids 800m">';
+        
+        // Efecto hover para las imágenes
+        document.querySelectorAll('.ruta-imagen-placeholder').forEach(placeholder => {
+            placeholder.addEventListener('click', function() {
+                const rutaTitulo = this.closest('.ruta-item').querySelector('.ruta-titulo h3').textContent;
+                alert(`Para agregar la imagen de la ${rutaTitulo}, reemplaza el contenido de este div con: <img src="tu-imagen.jpg" alt="${rutaTitulo}" style="width:100%; height:100%; object-fit:cover;">`);
+            });
+        });
+    });
+</script>
+
+
+    <!-- Prizes Section -->
+    <section id="premios" class="blanco-bg">
+        <div class="container">
+            <div class="section-title">
+                <h2>Premiación <span class="naranja-text">2026</span></h2>
+            </div>
+            
+            <div class="prizes-container">
+                <div class="prize-category">
+                    <h4><span class="naranja-text">Aquaman Kids</span> (800 mts)</h4>
+                    <p><strong>Categoría:</strong> 6-9 años</p>
+                    <p><strong>Premios por género:</strong></p>
+                    <ul>
+                        <li><span class="naranja-text">1° puesto:</span> $100.000 COP</li>
+                        <li><span class="naranja-text">2° puesto:</span> $70.000 COP</li>
+                        <li><span class="naranja-text">3° puesto:</span> $50.000 COP</li>
+                    </ul>
+                </div>
+                
+                <div class="prize-category">
+                    <h4>5K - <span class="naranja-text">Infantil</span></h4>
+                    <p><strong>Categoría:</strong> 10-13 años</p>
+                    <p><strong>Premios:</strong></p>
+                    <ul>
+                        <li><span class="naranja-text">1° puesto:</span> $100.000 COP</li>
+                        <li><span class="naranja-text">2° puesto:</span> $70.000 COP</li>
+                        <li><span class="naranja-text">3° puesto:</span> $50.000 COP</li>
+                    </ul>
+                </div>
+                
+                <div class="prize-category">
+                    <h4>5K - <span class="naranja-text">Juvenil</span></h4>
+                    <p><strong>Categoría:</strong> 14-17 años</p>
+                    <p><strong>Premios:</strong></p>
+                    <ul>
+                        <li><span class="naranja-text">1° puesto:</span> $100.000 COP</li>
+                        <li><span class="naranja-text">2° puesto:</span> $70.000 COP</li>
+                        <li><span class="naranja-text">3° puesto:</span> $50.000 COP</li>
+                    </ul>
+                </div>
+                
+                <div class="prize-category">
+                    <h4>5K - <span class="naranja-text">Abierta</span></h4>
+                    <p><strong>Categoría:</strong> 18+ años</p>
+                    <p><strong>Premios:</strong></p>
+                    <ul>
+                        <li><span class="naranja-text">1° puesto:</span> $400.000 COP</li>
+                        <li><span class="naranja-text">2° puesto:</span> $300.000 COP</li>
+                        <li><span class="naranja-text">3° puesto:</span> $200.000 COP</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kit Section Mejorada -->
+    <section id="kit" class="blanco-bg">
+        <div class="container">
+            <div class="section-title">
+                <h2>Kit del <span class="naranja-text">Participante</span></h2>
+            </div>
+            
+            <div class="kit-container">
+                <div class="kit-info">
+                    <h3 style="color: var(--negro); margin-bottom: 25px; font-size: 1.8rem;">Contenido del <span class="naranja-text">Kit Oficial</span></h3>
+                    <p style="margin-bottom: 30px; color: var(--negro); font-size: 1.1rem;">Cada participante inscrito recibirá un kit exclusivo de alta calidad diseñado especialmente para la "Carrera por Papito Dios 2026".</p>
+                    
+                    <div class="kit-details">
+                        <div class="kit-item-detail">
+                            <i class="fas fa-tshirt"></i>
+                            <div class="kit-item-text">
+                                <h4>Camiseta Oficial de la Carrera</h4>
+                                <p>Diseño exclusivo conmemorativo, fabricada en material técnico deportivo de alta calidad que permite la transpiración durante la carrera. Disponible en tallas para adultos y niños.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="kit-item-detail">
+                            <i class="fas fa-medal"></i>
+                            <div class="kit-item-text">
+                                <h4>Medalla Conmemorativa</h4>
+                                <p>Medalla oficial de la "Carrera por Papito Dios" con diseño exclusivo para la edición 2026. Será entregada a todos los participantes que crucen la línea de meta.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="kit-item-detail">
+                            <i class="fas fa-shopping-bag"></i>
+                            <div class="kit-item-text">
+                                <h4>Tula Oficial del Evento</h4>
+                                <p>Bolso deportivo especial con el logo de la carrera y del Club Deportivo Aquaman. Ideal para transportar tus pertenencias el día del evento.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="kit-images">
+                    <div class="kit-image-placeholder">
+                        <i class="fas fa-tshirt"></i>
+                        <p>Camiseta Oficial</p>
+                        <small style="color: var(--naranja); font-weight: normal;"><img src="../IM/CamisaX.jpeg" alt=""></small>
+                    </div>
+                    
+                    <div class="kit-image-placeholder">
+                        <i class="fas fa-medal"></i>
+                        <p>Medalla Conmemorativa</p>
+                        <small style="color: var(--naranja); font-weight: normal;"><img src="../IM/MedallaX.jpeg" alt=""></small>
+                    </div>
+                    
+                    <div class="kit-image-placeholder">
+                        <i class="fas fa-shopping-bag"></i>
+                        <p>Tula Oficial</p>
+                        <small style="color: var(--naranja); font-weight: normal;"><img src="../IM/TulaX.jpeg" alt=""></small>
+                    </div>
+                    
+                    <div class="kit-image-placeholder">
+                        <i class="fas fa-gift"></i>
+                        <p>Kit Completo</p>
+                        <small style="color: var(--naranja); font-weight: normal;"><img src="../IM/KitX.jpeg" alt=""></small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        // Smooth scrolling para el botón de inscripción
+        document.querySelector('.cta-button').addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            window.scrollTo({
+                top: targetElement.offsetTop - 100,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Manejo del formulario de inscripción
+        document.getElementById('inscriptionForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Obtener valores del formulario
+            const nombre = document.getElementById('nombre').value;
+            const categoria = document.getElementById('categoria').value;
+            const periodo = document.getElementById('periodo').value;
+            
+            // Mostrar mensaje de confirmación
+            alert(`¡Gracias ${nombre}! Tu inscripción ha sido registrada. Recibirás un correo con las instrucciones de pago para la categoría seleccionada.`);
+            
+            // Resetear formulario
+            this.reset();
+            
+            // Scroll suave hacia arriba
+            window.scrollTo({
+                top: document.getElementById('inscripcion').offsetTop - 100,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Efectos de animación al hacer scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observar elementos para animación
+        document.querySelectorAll('.distance-card, .prize-category, .kit-item-detail').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+        
+        // Efecto hover para placeholders de imágenes
+        document.querySelectorAll('.kit-image-placeholder').forEach(placeholder => {
+            placeholder.addEventListener('click', function() {
+                const itemName = this.querySelector('p').textContent;
+                alert(`Este es el espacio para la imagen del ${itemName}. Para agregar una imagen, reemplaza este div con: <img src="ruta-de-tu-imagen.jpg" alt="${itemName}" style="width:100%; height:100%; object-fit:cover; border-radius:12px;">`);
+            });
+        });
+    </script>
+
+
+    </section>
+ <footer class="footer">
+    <div class="c-container">
+        <div class="footer_grid">
+            <div id="w-node-_0c2f0453-5526-a1c1-1c1f-38b2b3767892-b376788f" class="c-footer_col">
+                <div class="c-footer_col-title">
+                    <div class="c-text-2">LA FUERZA</div>
+                </div>
+                <div class="c-footer_links-wrapper">
+                    <a href="index.html" class="c-footer_link w--current">Inicio</a>
+                    <a href="Html/Conocenos.html" class="c-footer_link">Conocenos</a>
+                    <a href="Html/Novedades.html" class="c-footer_link">Novedades</a>
+                    <a href="Html/Tienda.html" class="c-footer_link">Tienda</a>
+                        <div class="c-nav_link-arrow">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7 8" fill="none" class="c-custom-svg">
+                            </svg>
+                        </div>
+                    </a>
+                    <a href="Html/Iniciar session.html " target="_blank" class="c-footer_link w-inline-block">
+                        <div>Iniciar Sesión</div>
+                        <div class="c-nav_link-arrow">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7 8" fill="none" class="c-custom-svg">
+                            </svg>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="c-footer_col cc-center">
+                <div class="c-footer_col-title cc-center">
+                    <div class="c-text-2">ESTÁ EN</div>
+                </div>
+                <div class="c-footer_newsletter-wrapper">
+                    <div id="newsletter-form-container" class="c-newsletter-embed"></div>
+                    <div class="c-button cc-input">
+                        <div class="c-button_inner">
+                            <div class="c-button_text cc-input"><a href="Html/Contactos.html">Contactanos</a> </div>
+                        </div>
+
+                        </button>
+                    </div>
+                </div>
+              <div id="w-node-_0c2f0453-5526-a1c1-1c1f-38b2b37678ad-b376788f" class="c-footer_socials">
+    <div class="c-made-by">
+        <div class="c-text-4">Desarrollado por N.E.C.P</div>
+    </div>
+</div>
+
+
+                <div class="c-decoration-hero_top cc-footer-mobile">
+                    <div class="c-container">
+                        <div class="c-grid">
+                            <div class="c-text-2"></div>
+                            <div class="c-text-2"><span class="c-text-orange-700">LA FUERZA ESTÁ EN TUS PIES</span></div>
+                            <div class="c-text-2"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+<div class="c-footer_col cc-last">
+                <div class="c-footer_col-title">
+                    <div class="c-text-2">TUS PIES</div>
+                </div>
+                <div class="c-footer_locations-wrapper">
+                    <div class="c-footer_location">
+                        <div class="c-text-3"><a href="https://www.google.com/maps/place/Cafeter%C3%ADa+complejo+acu%C3%A1tico/@7.8925744,-72.5059867,17z/data=!3m1!4b1!4m6!3m5!1s0x8e6645eb28ab27d3:0xea13015c70387a1d!8m2!3d7.8925744!4d-72.5011104!16s%2Fg%2F11rn6v_k3x?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D">Complejo Aquatico</a></div>
+                    </div>
+                    <div class="c-footer_location">
+                        <div class="c-text-3"><a href="https://www.google.com/maps/place/Plaza+de+Banderas/@7.8935361,-72.5049132,17z/data=!3m1!4b1!4m6!3m5!1s0x8e664573e48c3c85:0xd81da96167d9d54e!8m2!3d7.8935361!4d-72.5023329!16s%2Fg%2F1tsyl78k?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D">Nuestra Direccion especifica</a></div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=6837014cb4393ef80839a179"
+        type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.prod.website-files.com/6837014cb4393ef80839a179/js/webflow.f8aaeb20.72948ff5b7606f47.js"
+        type="text/javascript"></script><!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MWZXBK6F" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Start of HubSpot Embed Code -->
+    <script type="text/javascript" id="hs-script-loader" async defer
+        src="//js-eu1.hs-scripts.com/144895398.js"></script>
+    <!-- End of HubSpot Embed Code -->
+
+    <script>
+        (function () {
+            function addScript(key, src, module) {
+                const s = document.createElement("script");
+                if (module) s.setAttribute("type", "module");
+                s.setAttribute("src", src);
+                document.body.appendChild(s);
+                const event = new Event(`${key}ScriptLoaded`);
+                s.onload = () => document.dispatchEvent(event)
+            }
+
+            const DEBUG_URL = 'http://localhost:3000'
+            const STAGE_URL = `https://heimdall-power-custom-code.vercel.app` //DO NOT MODIFY THIS URL IF YOU DON'T KNOW WHAT YOU ARE DOING
+            const PRODUCTION_URL = `https://heimdall-power-custom-code-refokus.vercel.app` //DO NOT MODIFY THIS URL IF YOU DON'T KNOW WHAT YOU ARE DOING
+            const url = new URL(window.location)
+            const urlParams = url.searchParams;
+            const debug = urlParams.get("debug");
+            const remoteDebug = urlParams.get("remoteDebug")
+            const path = window.location.pathname.split("/")[1];
+
+            if (debug !== null) {
+                addScript('client', `${DEBUG_URL}/@vite/client`, true);
+                addScript('main', `${DEBUG_URL}/src/main.js`, true);
+            } else if (remoteDebug) {
+                addScript('client', `${remoteDebug}/@vite/client`, true)
+                addScript('main', `${remoteDebug}/src/main.js`, true)
+            } else if (url.host.match(/webflow\.io/)) {
+                addScript('main', `${STAGE_URL}/main.js`, true);
+            } else {
+                addScript('main', `${PRODUCTION_URL}/main.js`, true);
+            }
+        })()
+
+    </script>
+    <script>
+        document.querySelectorAll('.c-tabs_link').forEach(tab => {
+            tab.addEventListener('mouseover', () => {
+                $(tab).trigger('tap');
+            })
+        })
+    </script>
+            <script
+        src="https://cdn.prod.website-files.com/6837014cb4393ef80839a179%2F66ba5a08efe71070f98dd10a%2F68ee3c039dbf5ff726af8db4%2Fmwzxbk6f-1.1.1.js"
+        type="text/javascript"></script>
+            <link href="https://cdn.intellimize.co/snippet/117630511.js" rel="preload" as="script" />
+</body>
+
+</html>

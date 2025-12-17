@@ -1,0 +1,2102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conócenos | Aquaman</title>
+            <link href="https://cdn.prod.website-files.com/6837014cb4393ef80839a179/css/heimdall-power.webflow.shared.5f686b46d.min.css" rel="stylesheet" type="text/css"/>
+        <link href="https://cdn.prod.website-files.com/6837014cb4393ef80839a179/css/heimdall-power.webflow.6849d129661dc6ec50bc8209-ff4041413.min.css" rel="stylesheet" type="text/css"/>
+        <link href="IM/Logo.png" rel="shortcut icon" type="image/png" />
+<link rel="icon" href="IM/logo.png" sizes="32x32" type="image/png" />
+        
+    <style>
+        :root {
+            --primary-orange: #FF5C39;
+            --light-orange: #FF8C39;
+            --soft-blue: #E3F2FD;
+            --light-bg: #FFFFFF;
+            --light-gray: #F5F7FA;
+            --medium-gray: #E8EAED;
+            --text-dark: #1A1A1A;
+            --text-medium: #5F6368;
+            --text-light: #80868B;
+            --shadow-light: rgba(0, 0, 0, 0.08);
+            --shadow-medium: rgba(0, 0, 0, 0.12);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, sans-serif;
+            background: var(--light-bg);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .main-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* Hero Section - Claro y luminoso */
+        .hero-section {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--light-bg) 0%, var(--light-gray) 100%);
+            position: relative;
+            overflow: hidden;
+            padding: 4rem 0;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 92, 57, 0.05), transparent);
+            clip-path: polygon(100% 0, 100% 100%, 0 100%);
+            animation: slideInRight 1.2s ease-out;
+        }
+        
+        .hero-content {
+            flex: 1;
+            padding-right: 4rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-title {
+            font-size: 3.8rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            background: linear-gradient(45deg, var(--text-dark), var(--primary-orange));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.3s forwards;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-medium);
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            line-height: 1.8;
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.6s forwards;
+        }
+        
+        .hero-image-container {
+            flex: 1;
+            position: relative;
+            opacity: 0;
+            animation: fadeIn 1.5s ease 0.9s forwards;
+        }
+        
+        .main-hero-image {
+            width: 100%;
+            height: 550px;
+            object-fit: cover;
+            border-radius: 25px;
+            box-shadow: 0 25px 50px -12px rgba(255, 92, 57, 0.15);
+            transform: perspective(1000px) rotateY(-15deg) rotateX(5deg);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .main-hero-image:hover {
+            transform: perspective(1000px) rotateY(-5deg) rotateX(2deg);
+            box-shadow: 0 35px 60px -12px rgba(255, 92, 57, 0.25);
+        }
+        
+        /* Water Animation Element */
+        .water-animation {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(transparent, rgba(0, 180, 216, 0.1));
+            clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 100%);
+            animation: waterFlow 8s ease-in-out infinite;
+        }
+        
+        /* Section Styling - Claro */
+        .section {
+            padding: 8rem 0;
+            position: relative;
+        }
+        
+        .section-light {
+            background: var(--light-bg);
+        }
+        
+        .section-gray {
+            background: var(--light-gray);
+        }
+        
+        .section-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            color: var(--text-dark);
+            position: relative;
+            display: inline-block;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-orange), var(--light-orange));
+            border-radius: 2px;
+            animation: expandWidth 1s ease 0.5s forwards;
+            transform-origin: left;
+        }
+        
+        /* Mission Section - Con efecto especial */
+        .mission-content {
+            background: linear-gradient(135deg, var(--light-bg), var(--soft-blue));
+            padding: 5rem;
+            border-radius: 30px;
+            box-shadow: 0 20px 40px var(--shadow-light);
+            margin-bottom: 4rem;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--medium-gray);
+            opacity: 0;
+            animation: fadeIn 1s ease 0.8s forwards;
+        }
+        
+        .mission-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary-orange), var(--light-orange));
+            animation: slideDown 1.5s ease;
+        }
+        
+        .mission-content::after {
+            content: '💧';
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            font-size: 4rem;
+            opacity: 0.1;
+            animation: float 4s ease-in-out infinite;
+        }
+        
+        .mission-title {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 2rem;
+            line-height: 1.4;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .mission-text {
+            font-size: 1.15rem;
+            color: var(--text-medium);
+            line-height: 1.9;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* About Images Grid - Animado */
+        .about-images-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+        
+        .about-image-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            height: 450px;
+            transform: translateY(50px);
+            opacity: 0;
+            animation: slideUp 0.8s ease forwards;
+        }
+        
+        .about-image-item:nth-child(1) {
+            animation-delay: 0.4s;
+        }
+        
+        .about-image-item:nth-child(2) {
+            animation-delay: 0.6s;
+        }
+        
+        .about-image-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            filter: brightness(1.02) contrast(1.05);
+        }
+        
+        .about-image-item:hover img {
+            transform: scale(1.08) rotate(1deg);
+            filter: brightness(1.05) contrast(1.1);
+        }
+        
+        .image-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.1));
+            padding: 2rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.4s ease;
+        }
+        
+        .about-image-item:hover .image-overlay {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Map Section - Claro */
+        .map-section {
+            padding: 8rem 0;
+            background: linear-gradient(135deg, var(--light-gray), var(--soft-blue));
+        }
+        
+        .map-container {
+            width: 100%;
+            height: 500px;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px var(--shadow-medium);
+            position: relative;
+            transform: translateY(30px);
+            opacity: 0;
+            animation: slideUp 0.8s ease 0.8s forwards;
+        }
+        
+        .map-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(255, 92, 57, 0.03), transparent);
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        /* Trainers Section - Tarjetas flotantes */
+        .trainers-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 4rem;
+            margin-top: 4rem;
+        }
+        
+        .trainer-card {
+            background: var(--light-bg);
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px var(--shadow-light);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid var(--medium-gray);
+            position: relative;
+            transform: translateY(30px);
+            opacity: 0;
+            animation: slideUp 0.8s ease forwards;
+        }
+        
+        .trainer-card:nth-child(1) {
+            animation-delay: 0.3s;
+        }
+        
+        .trainer-card:nth-child(2) {
+            animation-delay: 0.5s;
+        }
+        
+        .trainer-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 30px 60px rgba(255, 92, 57, 0.15);
+        }
+        
+        .trainer-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-orange), var(--light-orange));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s ease;
+        }
+        
+        .trainer-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .trainer-image {
+            width: 100%;
+            height: 350px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .trainer-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .trainer-card:hover .trainer-image img {
+            transform: scale(1.1);
+        }
+        
+        .trainer-info {
+            padding: 2.5rem;
+            position: relative;
+        }
+        
+        .trainer-name {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-orange);
+            margin-bottom: 0.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .trainer-name::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-orange);
+            transition: width 0.5s ease;
+        }
+        
+        .trainer-card:hover .trainer-name::after {
+            width: 100%;
+        }
+        
+        .trainer-description {
+            color: var(--text-medium);
+            line-height: 1.8;
+            margin-top: 1.5rem;
+            font-size: 1.05rem;
+        }
+        
+        /* Floating Elements */
+        .floating-element {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(30px);
+            opacity: 0.15;
+            z-index: 1;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .float-1 {
+            width: 200px;
+            height: 200px;
+            background: var(--primary-orange);
+            top: 10%;
+            right: 5%;
+            animation-delay: 0s;
+        }
+        
+        .float-2 {
+            width: 150px;
+            height: 150px;
+            background: var(--light-orange);
+            bottom: 15%;
+            left: 5%;
+            animation-delay: 2s;
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        @keyframes expandWidth {
+            from { width: 0; }
+            to { width: 80px; }
+        }
+        
+        @keyframes slideDown {
+            from { height: 0; }
+            to { height: 100%; }
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            33% {
+                transform: translate(10px, -15px) rotate(5deg);
+            }
+            66% {
+                transform: translate(-5px, 10px) rotate(-5deg);
+            }
+        }
+        
+        @keyframes waterFlow {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-5px);
+            }
+        }
+        
+        @keyframes ripple {
+            0% {
+                transform: scale(0);
+                opacity: 0.5;
+            }
+            100% {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+        
+        /* Interactive Elements */
+        .ripple-button {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--primary-orange);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 2rem;
+            opacity: 0;
+            animation: fadeIn 1s ease 1.2s forwards;
+        }
+        
+        .ripple-button:hover {
+            background: var(--light-orange);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 92, 57, 0.3);
+        }
+        
+        .ripple-button:active {
+            transform: translateY(-1px);
+        }
+        
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.7);
+            transform: scale(0);
+            animation: ripple 0.6s linear;
+            pointer-events: none;
+        }
+        
+        /* Stats Counter */
+        .stats-counter {
+            display: flex;
+            justify-content: space-around;
+            margin: 4rem 0;
+            padding: 3rem;
+            background: var(--light-bg);
+            border-radius: 25px;
+            box-shadow: 0 15px 30px var(--shadow-light);
+            border: 1px solid var(--medium-gray);
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--primary-orange);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        
+        .stat-label {
+            color: var(--text-medium);
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-section {
+                flex-direction: column;
+                text-align: center;
+                padding: 3rem 0;
+            }
+            
+            .hero-content {
+                padding-right: 0;
+                margin-bottom: 4rem;
+            }
+            
+            .hero-title {
+                font-size: 3rem;
+            }
+            
+            .trainers-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .about-images-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .main-hero-image {
+                height: 400px;
+                transform: perspective(1000px) rotateY(0) rotateX(0);
+            }
+            
+            .main-hero-image:hover {
+                transform: perspective(1000px) rotateY(0) rotateX(0);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .main-container {
+                padding: 0 1.5rem;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .mission-content {
+                padding: 2.5rem;
+            }
+            
+            .mission-title {
+                font-size: 1.8rem;
+            }
+            
+            .trainer-image {
+                height: 300px;
+            }
+            
+            .stats-counter {
+                flex-direction: column;
+                gap: 2rem;
+                padding: 2rem;
+            }
+        }
+        
+        /* Scroll Animation */
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .scroll-animate.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+            <script type="text/javascript">
+            (function(e) {
+                var s = {
+                    r: []
+                };
+                e.wf = {
+                    r: s.r,
+                    ready: t=>{
+                        s.r.push(t)
+                    }
+                }
+            }
+            )(window)
+        </script>
+        <script type="text/javascript">
+            (function(e, t, p) {
+                var n = document.documentElement
+                  , s = {
+                    p: [],
+                    r: []
+                }
+                  , u = {
+                    p: s.p,
+                    r: s.r,
+                    push: function(e) {
+                        s.p.push(e)
+                    },
+                    ready: function(e) {
+                        s.r.push(e)
+                    }
+                };
+                e.intellimize = u,
+                n.className += " " + p,
+                setTimeout(function() {
+                    n.className = n.className.replace(RegExp(" ?" + p), "")
+                }, t)
+            }
+            )(window, 4000, 'anti-flicker')
+        </script>
+        <link href="https://cdn.intellimize.co/snippet/117630511.js" rel="preload" as="script"/>
+        <script type="text/javascript">
+            var wfClientScript = document.createElement("script");
+            wfClientScript.src = "https://cdn.intellimize.co/snippet/117630511.js",
+            wfClientScript.async = !0,
+            wfClientScript.onerror = function() {
+                document.documentElement.className = document.documentElement.className.replace(RegExp(" ?anti-flicker"), "")
+            }
+            ,
+            document.head.appendChild(wfClientScript);
+        </script>
+
+        <script>
+            (function(w, d, s, l, i) {
+                w[l] = w[l] || [];
+                w[l].push({
+                    'gtm.start': new Date().getTime(),
+                    event: 'gtm.js'
+                });
+                var f = d.getElementsByTagName(s)[0]
+                  , j = d.createElement(s)
+                  , dl = l != '.Layer' ? '&l=' + l : '';
+                j.async = true;
+                j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+                f.parentNode.insertBefore(j, f);
+            }
+            )(window, document, 'script', '.Layer', 'GTM-MWZXBK6F');
+        </script>
+           <style>
+            
+            .anti-flicker, .anti-flicker * {
+                visibility: hidden !important;
+                opacity: 0 !important;
+            }  
+            [.-wf-hidden-variation], [.-wf-hidden-variation] * {
+                display: none !important;
+            }
+            body {
+                -webkit-font-smoothing: antialiased;
+            }
+
+            [title-reveal] {
+                opacity: 0;
+                max-width: max-content;
+            }
+
+            @media screen and (min-width: 767px) {
+                [neuron-fix] .c-stack_col {
+                    opacity: 0;
+                }
+            }
+
+
+                html {
+                    height: auto;
+                }
+
+                :root {
+                    --eas-1: cubic-bezier(0.16, 0.64, 0.32, 1.00);
+                    --eas-2: cubic-bezier(0.16, 0.64, 0.32, 1.00);
+                    --dur-1: 1s;
+                    --dur-2: 0.5s;
+                }
+
+                body {
+                    -webkit-font-smoothing: antialiased;
+                    -moz-osx-font-smoothing: grayscale;
+                }
+
+                html:has(.c-menu-btn.w--open), body:has(.c-menu-btn.w--open) {
+                    overflow: clip;
+                }
+
+                body:has(.c-menu-btn.w--open) .c-navbar .c-overlay {
+                    opacity: 0.4;
+                }
+
+                /* Avoid texts inside the dropdown toggle to go outside the dropdown box. 
+  For this we need to have the class of the Drodpown Toggle + the p or h inside */
+                .faq-dropdown p {
+                    white-space: normal !important;
+                }
+
+                */ .c-image-reveal_movement {
+                    max-width: fit-content;
+                }
+
+                a {
+                    color: inherit
+                }
+
+                @media screen and (min-width: 1440px) {
+                    body {
+                        font-size: 1rem !important;
+                    }
+                }
+
+                .c-button_cta-wrapper * {
+                    width: 100%;
+                }
+
+                .c-bg-img + * {
+                    position: relative;
+                    z-index: 1;
+                }
+
+                /* Links */
+                [hover-underline] {
+                    max-width: max-content;
+                    position: relative;
+                }
+
+                [hover-underline]:after {
+                    content: '';
+                    display: block;
+                    width: 0%;
+                    height: 2px;
+                    min-height: 2px;
+                    background-color: currentColor;
+                    position: absolute;
+                    left: 0;
+                    bottom: -4px;
+                    top: auto;
+                    right: 0;
+                    transition: width var(--dur-1) var(--eas-2);
+                }
+
+                [hover-underline]:hover:after {
+                    width: 100%;
+                }
+
+                /* Table */
+                table {
+                    border-collapse: collapse;
+                    width: 100%;
+                    margin: 1.5rem 0;
+                    border: 1px solid var(--gray-900);
+                    font-size: 0.875em;
+                    font-weight: 400;
+                }
+
+                th, td {
+                    text-align: left;
+                    padding: 0.5rem;
+                }
+
+                tr {
+                    background-color: transparent;
+                    border-bottom: 1px solid var(--gray-900);
+                    border-right: 1px solid var(--gray-900);
+                }
+
+                tr:last-child {
+                    background-color: transparent;
+                    border-bottom: 0px solid var(--gray-900);
+                    border-right: 0px solid var(--gray-900);
+                }
+
+                th {
+                    background-color: var(--gray-150);
+                    text-align: center;
+                    border-bottom: 1px solid var(--gray-900);
+                    border-right: 1px solid var(--gray-900);
+                }
+
+                th:last-child {
+                    border-bottom: 0px solid var(--gray-900);
+                    border-right: 0px solid var(--gray-900);
+                }
+
+                td {
+                    border-right: 1px solid var(--gray-900);
+                    padding: 0.75rem 1rem;
+                }
+
+                td:last-child {
+                    border-right: 0px solid var(--gray-900);
+                }
+
+                /* Buttons */
+                .c-text-btn:before {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    inset: 0;
+                    background-color: var(--orange-300_-key);
+                    border-radius: 1rem;
+                    width: calc(100% + 1.56rem);
+                    height: 100%;
+                    left: -1rem;
+                    transform: scale(0.15, 1);
+                    opacity: 0;
+                    transform-origin: left center;
+                    transition: all var(--dur-2) var(--eas-1);
+                }
+
+                .c-text-btn > * {
+                    position: relative;
+                }
+
+                .c-text-btn:hover:before {
+                    transform: scale(1, 1);
+                    opacity: 1;
+                }
+
+                /* Sprite */
+                [drone-sprite-img] {
+                    animation: mover-sprite 0.8s steps(11) infinite;
+                }
+
+                @keyframes mover-sprite {
+                    100% {
+                        transform: translateX(-605em);
+                    }
+                }
+
+                /* CS slider */
+                .splide__pagination.c-cs-slider_pagination {
+                    position: absolute;
+                    inset: 34.25em 0 auto auto;
+                    padding-top: 1em;
+                    padding-left: 2em;
+                    padding-right: 2em;
+                }
+
+                .splide__pagination.c-cs-slider_pagination .splide__pagination__page {
+                    background-color: var(--gray-500);
+                    opacity: 1;
+                    transition: background-color .2s ease;
+                    width: 0.875rem;
+                    height: 0.875rem;
+                    font-size: inherit !important;
+                }
+
+                .splide__pagination.c-cs-slider_pagination .splide__pagination__page.is-active {
+                    background-color: var(--orange-300_-key);
+                    '
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  [.-wf-domain] [cs-slider-wrapper] {
+    max-height: 46em;
+    overflow: hidden;
+  }
+
+  /* Quote section */
+  [quote-dots-text] .line {
+    border-bottom: 1px solid var(--gray-500);
+  }
+
+  [quote-dots-text] {
+    border-top: 1px solid var(--gray-500);
+  }
+
+  [quote-dots-text] .line:not(:last-child) .dot {
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 50%;
+    background-color: var(--orange-300_-key);
+    bottom: -0.625rem;
+    position: absolute;
+  }
+
+  @media screen and (max-width: 767px) {
+    [quote-dots-text] .line:not(:last-child) .dot {
+      width: 0.5rem;
+      height: 0.5rem;
+      bottom: -0.25rem;
+    }
+  }
+
+  [three-d-model]:active {
+    cursor: grabbing;
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
+  }
+
+  /* Stack tabs */
+  [stack-col].cc-active [stack-info] {
+    opacity: 1;
+  }
+
+  [stack-col] [stack-info] .c-line {
+    transform: scaleX(0);
+  }
+
+  [stack-col].cc-active [stack-info] .c-line {
+    transform: scaleX(1);
+  }
+
+  @media screen and (min-width: 767px) {
+    [stack-col].cc-active [stack-ball] {
+      transform: scale(1.3);
+    }
+
+    [stack-col].cc-active [stack-pill] {
+      transform: translateY(-2.5em);
+    }
+
+    [stack-col].cc-active [stack-info] {
+      transform: translateY(2.5em);
+    }
+  }
+
+  /* Teams cards */
+  .c-team_item.cc-active .c-team_photo,
+  .c-team_item.cc-active .c-team_description {
+    grid-template-rows: 1fr;
+    opacity: 1;
+  }
+
+  .c-team_item.cc-active .c-team_description {
+    margin-top: 0.5em;
+  }
+
+  .c-team_item.cc-active .c-team_inner-content {
+    background-color: var(--gray-900);
+    color: var(--gray-100);
+    padding-top: 1.28em;
+    padding-bottom: 1.28em;
+  }
+
+  .c-team_item.cc-active .c-tag {
+    background-color: var(--orange-300_-key);
+    color: var(--gray-900);
+  } 
+
+  /* Linkedin posts */
+  .c-text-3rows {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .c-linkedin-post:hover .c-linkedin-post_box {
+    background-color: rgba(2, 102, 200, 1);
+  }
+
+  .c-linkedin-post:hover .c-linkedin-post_box-inner {
+    border-radius: 1em;
+  }
+
+  input[type="text"]::placeholder {
+    color: inherit;
+  }
+
+  .c-radio-filter_label:has(input:checked) .c-radio-filter {
+    background-color: var(--orange-300_-key);
+    color: var(--gray-900);
+  }
+
+  .c-button.cc-input:has(:focus) {
+    background-color: var(--orange-300_-key);
+  }
+
+  /* Button */
+  .c-button:not(.cc-filter):hover .c-button_inner.cc-arrow {
+    width: 0em;
+    min-width: 0em;
+    margin-left: 0em;
+  }
+
+  .c-button:not(.cc-input, .cc-filter):hover .c-button_inner.cc-arrow .c-custom-svg {
+    opacity: 0;
+  }
+
+  .c-button:hover .c-button_inner.cc-arrow.cc-hover {
+    width: 4em;
+    min-width: 4em;
+    margin-right: 0.12em;
+  }
+
+  .c-button[.-wf--button--variant="18px"]:hover .c-button_inner.cc-arrow.cc-hover {
+    width: 3em;
+    min-width: 3em;
+    margin-right: 0.12em;
+  }
+
+  .c-button[.-wf--button--variant="16px"]:hover .c-button_inner.cc-arrow.cc-hover {
+    width: 2.25em;
+    min-width: 2.25em;
+    margin-right: 0.13em;
+  }
+
+  .c-button .c-button_inner.cc-arrow.cc-hover .c-custom-svg {
+    opacity: 0;
+  }
+
+  .c-button:hover .c-button_inner.cc-arrow.cc-hover .c-custom-svg {
+    opacity: 1;
+  }
+
+  .c-button [custom-button-text-wrapper] div {
+    transition: transform var(--eas-1) var(--dur-2);
+  }
+
+  .c-button:hover [custom-button-text-wrapper] div {
+    transform: translateY(-100%);
+  }
+
+  .c-nav_link.cc-text > * {
+    transition: transform var(--eas-1) var(--dur-2);
+  }
+
+  .c-nav_link.cc-text:hover > * {
+    transform: translateY(-100%);
+  }
+
+  /* Texts animations */
+
+  [title-reveal] .line-mask {
+    /* width: calc(100% + 1.25rem); */
+  }
+
+  [title-reveal] .line-mask .rectangle {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    inset: 0;
+    clip-path: inset(0 100% 0 0);
+  }
+
+  [title-reveal] .line-mask .rectangle > div {
+    height: 100%;
+    width: 100%;
+    background: var(--orange-300_-key);
+    position: absolute;
+    inset: 0;
+  }
+
+  [title-reveal] .line {
+    z-index: 2;
+    clip-path: inset(0 100% 0 0);
+    padding: 0.1rem 0;
+    margin: -0.1rem 0;
+  }
+
+  .c-spec_inner-wrapper .c-text-3,
+  .c-spec_small-num{
+    font-weight: bolder;
+    letter-spacing: 0.05em;
+  }
+
+  /* Tech sticky dropdown */
+
+  @media screen and (min-width: 767px) {
+    .c-tabs_sticky-wrapper.cc-close .c-tabs_menu.cc-tech {
+      max-width: max-content;
+    }
+
+    .c-tabs_sticky-wrapper.cc-close .c-tab_text-wrapper {
+      max-width: 0;
+      margin-left: .0em;
+      opacity: 0;
+    }
+
+    .c-tabs_sticky-wrapper.cc-close .c-tab_pane {
+      height: 0em;
+      opacity: 0;
+    }
+
+    .c-tabs-wrapper.cc-hover .c-tab_pane {
+      height: 0em;
+      opacity: 0;
+    }
+
+    .c-tabs-wrapper.cc-hover:hover .c-tab_pane {
+      height: 17.25em;
+      opacity: 1;
+    }
+
+    .c-tabs_menu.cc-tech:before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url;
+      background-position: 50% 100%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: block;
+      opacity: 1;
+      transition: opacity .4s ease;
+      will-change: opacity;
+    }
+
+    .c-tabs_sticky-wrapper.cc-close .c-tabs_menu.cc-tech:before {
+      opacity: 0;
+    }
+  }
+
+  @media screen and (min-width: 967px) and (max-width: 1440px) {
+    .c-tech-hero {
+      font-size: 0.9vw;
+    }
+
+    .c-neurons-wrapper {
+      transform: scale(0.85) translateY(30svh);
+    }
+  }
+
+  /* Rives animations */
+  .c-line_list-item.cc-active .c-line_list-item_text-content {
+    grid-template-rows: 1fr;
+    margin-top: 0.75em;
+    opacity: 1;
+  }
+
+  .pin-spacer:has([specs-section]) {
+    z-index: 15 !important;
+  }
+
+  .c-stack-neuron.cc-grab.cc-tech canvas {
+    transform: scale(1.05);
+  }
+
+  /* Newsletter form */
+
+  [custom-input-label]:has(input:checked) [custom-input-inner] {
+    opacity: 1;
+  }
+
+  .c-button.cc-input .c-button_inner.cc-arrow {
+    width: 0em;
+    min-width: 0em;
+  }
+
+  .c-button.cc-input input::placeholder {
+    color: transparent;
+    transition: color .4s cubic-bezier(0.17, 0.10, 0.24, 1.00);
+  }
+
+  .c-button.cc-input:has(:focus) input::placeholder {
+    color: var(--gray-400);
+  }
+
+  .c-button.cc-input:has(input:focus) .c-button_inner.cc-arrow,
+  .c-button.cc-input:has(input:not(:focus):not(:placeholder-shown)) .c-button_inner.cc-arrow {
+    width: 3em;
+    min-width: 3em;
+  }
+
+  .c-button.cc-input:has(input:focus) .c-button_text,
+  .c-button.cc-input:has(input:not(:focus):not(:placeholder-shown)) .c-button_text {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  [news-list-item].cc-active {
+    background-color: var(--gray-900);
+    color: var(--gray-50);
+  }
+
+  /* Newsletter popup */
+  [newsletter-pop] [newsletter-pop-inner] {
+    transition-delay: 0s;
+  }
+
+  [newsletter-pop] .c-newsletter-pop_inner {
+    transition-delay: 0.5s;
+  }
+
+  [newsletter-pop]:hover .c-newsletter-pop_inner {
+    width: 33.5em;
+    transition-delay: 0s;
+  }
+
+  [newsletter-pop]:hover [newsletter-tag] {
+    margin-bottom: 0em;
+  }
+
+  [newsletter-pop]:hover [newsletter-pop-inner] {
+    grid-template-rows: 1fr;
+    transition-delay: 1s;
+  }
+
+
+  /* Navbar */
+  [navbar]:has([nav-banner]:not([visible])), 
+  [navbar]:has([nav-banner-wrapper].w-condition-invisible),
+  [navbar]:not(:has([nav-banner])) {
+    top: 1.5em;
+  }
+
+  [nav-banner][visible] {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  [nav-banner] .c-banner-rich a:hover {
+    color: black;
+    font-weight: 600;
+  }
+
+  /* Transition */
+  [.-wf-domain]:not(:has(.c-home-hero)) .c-transition {
+    transform: translateY(0%);
+    animation: transitionOut .6s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+    animation-delay: 0.5s;
+  }
+
+  [.-wf-domain] body.animating .c-transition {
+    animation: transitionIn .6s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+  }
+
+  @keyframes transitionIn {
+    0% { transform: translateY(-100%);}
+    100% { transform: translateY(0%);}
+  }
+
+  @keyframes transitionOut {
+    0% { transform: translateY(0%);}
+    100% { transform: translateY(-100%);}
+  }
+
+  .c-stack-wrapper:has(.cc-active) .c-stack_col .c-drag_wrapper {
+    opacity: 0;
+    transition: opacity .3s ease;
+  }
+
+  .c-stack-wrapper:has(.cc-active) .c-stack_col.cc-active .c-drag_wrapper {
+    opacity: 1;
+  }
+                                .menu-button {
+                                    cursor: pointer;
+                                    transition: transform 0.1s ease;
+                                    border: none;
+                                    background: none;
+                                    padding: 0;
+                                }
+
+                                .menu-button:hover {
+                                    transform: scale(1.05);
+                                }
+
+                                .menu-button:active {
+                                    transform: scale(0.95);
+                                }
+
+                                /* Menu lines animations */
+                                .menu-line {
+                                    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                                    transform-origin: center;
+                                }
+
+                                /* Top line - transforms into the upper diagonal of the X */
+                                .line-top {
+                                    opacity: 1;
+                                    transform-origin: 16px 12px;
+                                }
+
+                                .w--open .line-top {
+                                    transform: translate(0px, 4.34px) rotate(45deg);
+                                }
+
+                                /* Middle line - disappears */
+                                .line-middle {
+                                    opacity: 1;
+                                }
+
+                                .w--open .line-middle {
+                                    opacity: 0;
+                                    transform: scaleX(0);
+                                }
+
+                                /* Bottom line - transforms into the lower diagonal of the X */
+                                .line-bottom {
+                                    opacity: 1;
+                                    transform-origin: 16px 20px;
+                                }
+
+                                .w--open .line-bottom {
+                                    transform: translate(0px, -4.34px) rotate(-45deg);
+                                }
+
+                                .status {
+                                    font-size: 18px;
+                                    color: #333;
+                                    margin-top: 20px;
+                                }
+
+                                .demo-container {
+                                    display: flex;
+                                    gap: 40px;
+                                    align-items: center;
+                                    margin-top: 20px;
+                                }
+
+                                .svg-container {
+                                    text-align: center;
+                                }
+
+                                .svg-label {
+                                    margin-top: 10px;
+                                    font-size: 14px;
+                                    color: #666;
+                                }
+        </style>
+</head>
+ <body>
+        <div class="c-custom-code w-embed">
+  
+             </div>
+    <div .-animation="default" class="c-navbar w-nav" .-easing2="ease-out-quint" .-easing="ease-out-quint"
+        navbar="" .-collapse="small" role="banner" .-no-scroll="1" .-duration="600">
+        <div class="c-nav_banner-collections w-dyn-list">
+            <div role="list" class="w-dyn-items">
+                <div nav-banner-wrapper="" role="listitem" class="w-dyn-item">
+                    <div nav-banner="" visible="" class="c-nav_banner"><button aria-label="Close banner"
+                            nav-banner-close="" class="c-nav_banner-close"><svg xmlns="http://www.w3.org/2000/svg"
+                                width="100%" viewBox="0 0 24 24" fill="none" class="c-nav_banner-close-icon">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M5.29289 5.29289C5.68342 4.90237 6.31658 4.90237 6.70711 5.29289L12 10.5858L17.2929 5.29289C17.6834 4.90237 18.3166 4.90237 18.7071 5.29289C19.0976 5.68342 19.0976 6.31658 18.7071 6.70711L13.4142 12L18.7071 17.2929C19.0976 17.6834 19.0976 18.3166 18.7071 18.7071C18.3166 19.0976 17.6834 19.0976 17.2929 18.7071L12 13.4142L6.70711 18.7071C6.31658 19.0976 5.68342 19.0976 5.29289 18.7071C4.90237 18.3166 4.90237 17.6834 5.29289 17.2929L10.5858 12L5.29289 6.70711C4.90237 6.31658 4.90237 5.68342 5.29289 5.29289Z"
+                                    fill="currentColor"></path>
+                            </svg></button>
+                        <div class="c-banner-rich w-richtext">
+                            <p>¿Sabias Sobre Nuestro Gran Torneo Internacional?<a
+                                    href="TorneoInternacional.html"
+                                    .-wf-native-id-path="b44c77b5-35a0-1203-d041-f8e5714c6975:06665424-1a99-85e4-6696-68e8ad26134e_instance-0"
+                                    .-wf-ao-click-engagement-tracking="true"
+                                    .-wf-element-id="06665424-1a99-85e4-6696-68e8ad26134e"
+                                    .-wf-cms-context="%5B%7B%22collectionId%22%3A%22688a7bde8ec0d002ab8d5cc2%22%2C%22itemId%22%3A%22688a7bf0e7374e29f32a954b%22%7D%5D"
+                                    .-wf-component-context="%5B%7B%22componentId%22%3A%22b44c77b5-35a0-1203-d041-f8e5714c694e%22%2C%22instanceId%22%3A%22b44c77b5-35a0-1203-d041-f8e5714c6975%22%7D%5D">
+                                    Conoce más aquí. </a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+                 <div class="c-nav-container">
+           <div class="c-overlay"></div><a
+                .-wf-native-id-path="b44c77b5-35a0-1203-d041-f8e5714c6975:b44c77b5-35a0-1203-d041-f8e5714c6950"
+                .-wf-ao-click-engagement-tracking="true" .-wf-element-id="b44c77b5-35a0-1203-d041-f8e5714c6950"
+                .-wf-component-context="%5B%7B%22componentId%22%3A%22b44c77b5-35a0-1203-d041-f8e5714c694e%22%2C%22instanceId%22%3A%22b44c77b5-35a0-1203-d041-f8e5714c6975%22%7D%5D"
+                href="../index.html" aria-current="page" class="c-nav_brand w-inline-block w--current" style="color: white; text-decoration: none;">INICIO
+                </a> 
+            <nav role="navigation" class="c-nav_menu w-nav-menu">
+                <div nav-compress="" class="c-nav_links-wrapper cc-compress"><a
+                        .-wf-native-id-path="b44c77b5-35a0-1203-d041-f8e5714c6975:253987bb-7512-b51c-c327-7aae2b2b36cf:253987bb-7512-b51c-c327-7aae2b2b36c9"
+                        .-wf-ao-click-engagement-tracking="true"
+                        .-wf-element-id="253987bb-7512-b51c-c327-7aae2b2b36c9"
+                        .-wf-component-context="%5B%7B%22componentId%22%3A%22b44c77b5-35a0-1203-d041-f8e5714c694e%22%2C%22instanceId%22%3A%22b44c77b5-35a0-1203-d041-f8e5714c6975%22%7D%2C%7B%22componentId%22%3A%22253987bb-7512-b51c-c327-7aae2b2b36c9%22%2C%22instanceId%22%3A%22253987bb-7512-b51c-c327-7aae2b2b36cf%22%7D%5D"
+                        href="Conocenos.html" class="c-nav_link cc-text w-inline-block">
+                        <div>Conocenos</div>
+                    </a><a
+                        .-wf-native-id-path="b44c77b5-35a0-1203-d041-f8e5714c6975:74a75185-a9a2-67f9-ba02-59963e8a0436:253987bb-7512-b51c-c327-7aae2b2b36c9"
+                        .-wf-ao-click-engagement-tracking="true"
+                        .-wf-element-id="253987bb-7512-b51c-c327-7aae2b2b36c9"
+                        .-wf-component-context="%5B%7B%22componentId%22%3A%22b44c77b5-35a0-1203-d041-f8e5714c694e%22%2C%22instanceId%22%3A%22b44c77b5-35a0-1203-d041-f8e5714c6975%22%7D%2C%7B%22componentId%22%3A%22253987bb-7512-b51c-c327-7aae2b2b36c9%22%2C%22instanceId%22%3A%2274a75185-a9a2-67f9-ba02-59963e8a0436%22%7D%5D"
+                        href="Novedades.html" class="c-nav_link cc-text w-inline-block">
+                        <div>Novedades</div>
+                    </a><a
+                        .-wf-native-id-path="b44c77b5-35a0-1203-d041-f8e5714c6975:8424e097-3297-6e15-65df-5be07c1561ea:253987bb-7512-b51c-c327-7aae2b2b36c9"
+                        .-wf-ao-click-engagement-tracking="true"
+                        .-wf-element-id="253987bb-7512-b51c-c327-7aae2b2b36c9"
+                        .-wf-component-context="%5B%7B%22componentId%22%3A%22b44c77b5-35a0-1203-d041-f8e5714c694e%22%2C%22instanceId%22%3A%22b44c77b5-35a0-1203-d041-f8e5714c6975%22%7D%2C%7B%22componentId%22%3A%22253987bb-7512-b51c-c327-7aae2b2b36c9%22%2C%22instanceId%22%3A%228424e097-3297-6e15-65df-5be07c1561ea%22%7D%5D"
+                        href="TorneoInternacional.html" class="c-nav_link cc-text w-inline-block">
+                        <div></div>
+                        <div aria-hidden="">Torneo Internacional</div>
+                    </a><a
+                        .-wf-native-id-path="b44c77b5-35a0-1203-d041-f8e5714c6975:5745546d-7b67-d10b-30e5-4b2b3eb5f449:253987bb-7512-b51c-c327-7aae2b2b36c9"
+                        .-wf-ao-click-engagement-tracking="true"
+                        .-wf-element-id="253987bb-7512-b51c-c327-7aae2b2b36c9"
+                        .-wf-component-context="%5B%7B%22componentId%22%3A%22b44c77b5-35a0-1203-d041-f8e5714c694e%22%2C%22instanceId%22%3A%22b44c77b5-35a0-1203-d041-f8e5714c6975%22%7D%2C%7B%22componentId%22%3A%22253987bb-7512-b51c-c327-7aae2b2b36c9%22%2C%22instanceId%22%3A%225745546d-7b67-d10b-30e5-4b2b3eb5f449%22%7D%5D"
+                        href="/about" class="c-nav_link cc-text w-inline-block">
+                        <div></div>
+                        <div aria-hidden=""></div>
+                    </a></div>
+                <div class="c-nav_divider"></div>
+                <div class="c-nav_links-wrapper cc-ext"><a
+                        .-wf-native-id-path="b44c77b5-35a0-1203-d041-f8e5714c6975:b44c77b5-35a0-1203-d041-f8e5714c6960"
+                        .-wf-ao-click-engagement-tracking="true"
+                        .-wf-element-id="b44c77b5-35a0-1203-d041-f8e5714c6960"
+                        .-wf-component-context="%5B%7B%22componentId%22%3A%22b44c77b5-35a0-1203-d041-f8e5714c694e%22%2C%22instanceId%22%3A%22b44c77b5-35a0-1203-d041-f8e5714c6975%22%7D%5D"
+                        href="Inscripcion.html" target="_blank"
+                        class="c-nav_link cc-ext w-inline-block">
+                        <div>Inscripcion</div>
+                        <div class="c-nav_link-arrow"><svg xmlns="http://www.w3.org/2000/svg" width="100%"
+                                viewBox="0 0 7 8" fill="none" class="c-custom-svg">
+                                <path
+                                    d="M6.85291 6.07324H5.85291V2.28027L0.706421 7.42676L-0.000610352 6.71973L5.14587 1.57324H1.35291V0.573242H6.85291V6.07324Z"
+                                    fill="currentColor"></path>
+                            </svg></div>
+                    </a><a
+                        .-wf-native-id-path="b44c77b5-35a0-1203-d041-f8e5714c6975:b44c77b5-35a0-1203-d041-f8e5714c6966"
+                        .-wf-ao-click-engagement-tracking="true"
+                        .-wf-element-id="b44c77b5-35a0-1203-d041-f8e5714c6966"
+                        .-wf-component-context="%5B%7B%22componentId%22%3A%22b44c77b5-35a0-1203-d041-f8e5714c694e%22%2C%22instanceId%22%3A%22b44c77b5-35a0-1203-d041-f8e5714c6975%22%7D%5D"
+                        href="Modalidades.html" target="_blank" class="c-nav_link cc-ext w-inline-block">
+                        <div>Modalidades</div>
+                        <div class="c-nav_link-arrow"><svg xmlns="http://www.w3.org/2000/svg" width="100%"
+                                viewBox="0 0 7 8" fill="none" class="c-custom-svg">
+                                <path
+                                    d="M6.85291 6.07324H5.85291V2.28027L0.706421 7.42676L-0.000610352 6.71973L5.14587 1.57324H1.35291V0.573242H6.85291V6.07324Z"
+                                    fill="currentColor"></path>
+                            </svg></div>
+                    </a></div><a
+                    .-wf-native-id-path="b44c77b5-35a0-1203-d041-f8e5714c6975:fa92ca77-095b-fded-6556-df5321b06c9f"
+                    .-wf-ao-click-engagement-tracking="true"
+                    .-wf-element-id="fa92ca77-095b-fded-6556-df5321b06c9f"
+                    .-wf-component-context="%5B%7B%22componentId%22%3A%22b44c77b5-35a0-1203-d041-f8e5714c694e%22%2C%22instanceId%22%3A%22b44c77b5-35a0-1203-d041-f8e5714c6975%22%7D%5D"
+                    href="contactos.html" class="c-contact-btn cc-mb w-inline-block">
+                    <div>Contactos</div>
+                    <div class="c-button_arrow"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 12 12"
+                            fill="none" class="c-custom-svg">
+                            <path
+                                d="M1 5.25C0.585786 5.25 0.25 5.58579 0.25 6C0.25 6.41421 0.585786 6.75 1 6.75V5.25ZM11.5303 6.53033C11.8232 6.23744 11.8232 5.76256 11.5303 5.46967L6.75736 0.696699C6.46447 0.403806 5.98959 0.403806 5.6967 0.696699C5.40381 0.989593 5.40381 1.46447 5.6967 1.75736L9.93934 6L5.6967 10.2426C5.40381 10.5355 5.40381 11.0104 5.6967 11.3033C5.98959 11.5962 6.46447 11.5962 6.75736 11.3033L11.5303 6.53033ZM1 6V6.75H11V6V5.25H1V6Z"
+                                fill="currentColor"></path>
+                        </svg></div>
+                </a>
+            </nav>
+                    <div class="c-menu-btn w-nav-button">
+                        <div class="c-menu-btn_svg w-embed">
+                            <button class="menu-button" id="menuButton">
+                                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <!-- Orange background -->
+                                    <path d="M0 4C0 1.79086 1.79086 0 4 0H28C30.2091 0 32 1.79086 32 4V28C32 30.2091 30.2091 32 28 32H4C1.79086 32 0 30.2091 0 28V4Z" fill="#FF5C39"/>
+                                    <!-- Top line -->
+                                    <path class="menu-line line-top" d="M6 12H26" stroke="#111113" stroke-linecap="square"/>
+                                    <!-- Middle line -->
+                                    <path class="menu-line line-middle" d="M11 16H21" stroke="#111113" stroke-linecap="square"/>
+                                    <!-- Bottom line -->
+                                    <path class="menu-line line-bottom" d="M6 20H26" stroke="#111113" stroke-linecap="square"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <a .-wf-native-id-path="490a4755-f5cb-ade7-c6b1-0de69f69d20a:b44c77b5-35a0-1203-d041-f8e5714c696e" .-wf-ao-click-engagement-tracking="true" .-wf-element-id="b44c77b5-35a0-1203-d041-f8e5714c696e" .-wf-component-context="%5B%7B%22componentId%22%3A%22b44c77b5-35a0-1203-d041-f8e5714c694e%22%2C%22instanceId%22%3A%22490a4755-f5cb-ade7-c6b1-0de69f69d20a%22%7D%5D" href="Contactos.html" .-wf-event-ids="157053897" class="c-contact-btn w-inline-block">
+                    <div>Contactos</div>
+                    <div class="c-button_arrow">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 12 12" fill="none" class="c-custom-svg">
+                            <path d="M1 5.25C0.585786 5.25 0.25 5.58579 0.25 6C0.25 6.41421 0.585786 6.75 1 6.75V5.25ZM11.5303 6.53033C11.8232 6.23744 11.8232 5.76256 11.5303 5.46967L6.75736 0.696699C6.46447 0.403806 5.98959 0.403806 5.6967 0.696699C5.40381 0.989593 5.40381 1.46447 5.6967 1.75736L9.93934 6L5.6967 10.2426C5.40381 10.5355 5.40381 11.0104 5.6967 11.3033C5.98959 11.5962 6.46447 11.5962 6.75736 11.3033L11.5303 6.53033ZM1 6V6.75H11V6V5.25H1V6Z" fill="currentColor"></path>
+                        </svg>
+                    </div>
+                </a>
+            </div>
+            <br>
+            <br>
+         <section class="c-section cc-no-pt">
+    <div class="c-container">
+        <div class="c-title-wrapper cc-center">
+            <h2 title-reveal="" class="c-title-2">LA GRANDEZA COMIENZA BAJO EL AGUA</h2>
+        </div>
+        <div class="c-images-grid-wrapper">
+            <div class="c-grid">
+                <p id="w-node-_7e395d93-2b4e-812d-a335-8f1a05513c2b-50bc8209" class="c-text-1">
+                   “Somos Aquaman, quienes impulsan la marea.
+Los guardianes del alto rendimiento en el agua; una fuerza que anuncia los logros nacientes… y los retos que forjan campeones.<span class="c-text-gray-500">Impulsamos a los nadadores que transforman el deporte, a los constructores del futuro acuático y a los pioneros del carril, dotándolos de la fuerza, la técnica y la pasión necesarias para conquistar las aguas del mañana.”</span>
+                </p>
+                
+                <!-- IMAGEN LOCAL - Cambia "IM/nombre-imagen.jpg" por tu imagen -->
+                <img src="../IM/InicioConnocenos.jpeg" loading="lazy" id="w-node-_18d9618a-d86f-7235-35e3-489bb4a869b4-50bc8209" class="c-grid-image"/>
+                 
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- Mission Statement -->
+    <section class="section section-light">
+        <div class="main-container">       
+            <div class="mission-content scroll-animate">
+                <h2 class="mission-title" title-reveal="">
+                    "Somos un club de élite. Vigilamos cada carril, cada milésima, cada impulso bajo el agua. 
+                    Nos movemos donde otros dudan: en la disciplina, en la precisión y en la fuerza que no se negocia. 
+                    Leemos el ritmo del agua, anticipamos el cambio y respondemos con rigor absoluto. 
+                    
+                </h2>
+            </div>
+            
+            <div class="scroll-animate">
+                <p class="mission-text">
+                    Fundado con un propósito inquebrantable: elevar el rendimiento, la disciplina y la seguridad en 
+                    el deporte acuático, formando nadadores más fuertes, más conscientes y más inteligentes dentro 
+                    y fuera del agua.<br><br>
+                    
+                    Desde el primer día, nuestro trabajo ha unido metodología de élite, ciencia del entrenamiento 
+                    y una visión internacional. Lo que comenzó como un sueño ambicioso se convirtió en un centro 
+                    de alto rendimiento, reconocido por su exigencia, su excelencia y su capacidad de transformar 
+                    talento en potencia competitiva.<br><br>
+                    
+                    El mundo del deporte avanza a una velocidad implacable y exige niveles nunca antes vistos de 
+                    preparación física y mental. Nuestro objetivo es hacer que ese desafío sea alcanzable, sostenible 
+                    y extraordinario, construyendo procesos que fortalezcan no solo al nadador, sino también a las 
+                    familias, los equipos y las comunidades que lo impulsan.<br><br>
+                    
+                    En nuestro club, creemos que cada entrenamiento escribe una historia. No solo formamos atletas: 
+                    creamos mentalidades invencibles, desarrollamos técnica de precisión, y guiamos a quienes están 
+                    destinados a competir, liderar y trascender. Cada logro refleja nuestro compromiso con un futuro 
+                    más disciplinado, más humano y más poderoso.
+                </p>
+            </div>
+            
+            <!-- Stats Counter -->
+            <div class="stats-counter scroll-animate">
+                <div class="stat-item">
+                    <span class="stat-number" .-count="10">0</span>
+                    <span class="stat-label">Años de Experiencia</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" .-count="580">0</span>
+                    <span class="stat-label">Atletas Actuales </span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" .-count="99">0</span>
+                    <span class="stat-label">% Satisfacción</span>
+                </div>
+            </div>
+            
+            <div class="about-images-grid">
+                <div class="about-image-item scroll-animate">
+                    <img src="../IM/Coocenos2.jpeg" alt="Entrenamiento de alta precisión">
+                    <div class="image-overlay">
+                        <div style="color: white; font-weight: 600; font-size: 1.1rem;">Entrenamiento de Élite</div>
+                    </div>
+                </div>
+                <div class="about-image-item scroll-animate">
+                    <img src="../IM/Conocenos3.jpeg" alt="Comunidad Aquaman">
+                    <div class="image-overlay">
+                        <div style="color: white; font-weight: 600; font-size: 1.1rem;">Comunidad Unida</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- International Presence -->
+    <section class="map-section section-gray">
+        <div class="main-container">
+            <h2 title-reveal="">Aplicada a nivel internacional.
+Con la confianza de nadadores en todo el mundo.</h2>
+            <p class="mission-text scroll-animate" style="max-width: 800px; margin-bottom: 3rem; font-size: 1.2rem;">
+               En nuestro club, somos un equipo de excelencia dedicado a elevar el rendimiento, romper límites y formar atletas capaces de superar cada frontera del agua.
+            </p>
+            
+            <div class="map-container scroll-animate">
+                <iframe 
+                    frameborder="0" 
+                    width="100%" 
+                    height="500" 
+                    src="https://app.atlas.co/shared/CTX0UQUglrXJcEr8r0Pc?loc=-72.5300%2C7.9722%2C1.5972z&public=true" 
+                    style="border: 0;"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <div class="c-button-wrapper">
+                                <a .-wf--button--variant="16px" .-wf-native-id-path="096a3d12-ba0c-631c-ca72-778c52f57190:44546e45-087a-f86e-1862-ce0b495351ea" .-wf-ao-click-engagement-tracking="true" .-wf-element-id="44546e45-087a-f86e-1862-ce0b495351ea" .-wf-component-context="%5B%7B%22componentId%22%3A%2244546e45-087a-f86e-1862-ce0b495351ea%22%2C%22instanceId%22%3A%22096a3d12-ba0c-631c-ca72-778c52f57190%22%7D%5D" href="Contactos.html" .-wf-event-ids="" class="c-button w-variant-dec4cfea-776b-11f1-e517-2733665b7aaf w-inline-block">
+                                    <div class="c-button_inner w-variant-dec4cfea-776b-11f1-e517-2733665b7aaf cc-arrow cc-hover">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 17 16" fill="none" class="c-custom-svg cc-btn-arrow">
+                                            <path d="M16.7071 8.70711C17.0976 8.31658 17.0976 7.68342 16.7071 7.29289L10.3431 0.928932C9.95262 0.538408 9.31946 0.538408 8.92893 0.928932C8.53841 1.31946 8.53841 1.95262 8.92893 2.34315L14.5858 8L8.92893 13.6569C8.53841 14.0474 8.53841 14.6805 8.92893 15.0711C9.31946 15.4616 9.95262 15.4616 10.3431 15.0711L16.7071 8.70711ZM0 8L0 9H16V8V7L0 7L0 8Z" fill="currentColor"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="c-button_inner w-variant-dec4cfea-776b-11f1-e517-2733665b7aaf">
+                                        <div class="c-button_text w-variant-dec4cfea-776b-11f1-e517-2733665b7aaf">Contactanos</div>
+                                    </div>
+                                    <div class="c-button_inner w-variant-dec4cfea-776b-11f1-e517-2733665b7aaf cc-arrow">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 17 16" fill="none" class="c-custom-svg cc-btn-arrow">
+                                            <path d="M16.7071 8.70711C17.0976 8.31658 17.0976 7.68342 16.7071 7.29289L10.3431 0.928932C9.95262 0.538408 9.31946 0.538408 8.92893 0.928932C8.53841 1.31946 8.53841 1.95262 8.92893 2.34315L14.5858 8L8.92893 13.6569C8.53841 14.0474 8.53841 14.6805 8.92893 15.0711C9.31946 15.4616 9.95262 15.4616 10.3431 15.0711L16.7071 8.70711ZM0 8L0 9H16V8V7L0 7L0 8Z" fill="currentColor"></path>
+                                        </svg>
+                                    </div>
+                                </a>
+                            </div>
+        </div>
+    </section>
+
+    <!-- Trainers Section -->
+    <section class="section section-light">
+        <div class="main-container">
+            <h2     title-reveal="">Nuestro Equipo de Entrenadores</h2>
+            <p class="mission-text scroll-animate" style="max-width: 800px; margin-bottom: 4rem; font-size: 1.2rem;">
+                En nuestro club, somos un equipo de excelencia dedicado a elevar el rendimiento, 
+                romper límites y formar atletas capaces de superar cada frontera del agua
+            </p>
+            
+            <div class="trainers-grid">
+                <!-- Javier Ruiz -->
+                <div class="trainer-card scroll-animate">
+                    <div class="trainer-image">
+                        <img src="../IM/JavierRuiz.jpeg" alt="Javier Ruiz - Director Técnico">
+                    </div>
+                    <div class="trainer-info">
+                        <h3 class="trainer-name">Javier Ruiz</h3>
+                        <p class="trainer-description">
+                            Bajo el nombre distintivo de "Aquaman", se presenta un entrenador cuyo perfil sintetiza una 
+                            trayectoria poco convencional y demandante. Fundador de su propio torneo internacional que 
+                            lleva su apodo, su metodología se ha forjado a partir de una rigurosa transición: de nadador 
+                            profesional a instructor dentro de la disciplina institucional de la Policía. Esta dualidad —la 
+                            experiencia de alto rendimiento y la formación en un cuerpo estructurado y exigente— parece 
+                            definir su filosofía. Su enfoque se caracteriza por una exigencia extrema, a menudo señalada 
+                            como su sello principal, la cual justifica por su eficacia probada en la preparación de aspirantes 
+                            a profesionales. Mientras sus detractores podrían cuestionar si la dureza castrense es transferible 
+                            a todos los atletas, sus defensores destacan los resultados concretos: un camino directo, aunque 
+                            arduo, para quienes buscan trascender el ámbito amateur. En esencia, "Aquaman" no es solo un mentor, 
+                            sino un arquitecto de un sistema propio, donde la frontera entre la presión máxima y el alto rendimiento 
+                            se desdibuja deliberadamente, prometiendo moldedar nadadores de élite a través de una disciplina 
+                            férrea y personalizada.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Libia Marciales -->
+                <div class="trainer-card scroll-animate">
+                    <div class="trainer-image">
+                        <img src="../IM/LibiaMarciales.jpeg" alt="Libia Marciales - Entrenadora de Formación">
+                    </div>
+                    <div class="trainer-info">
+                        <h3 class="trainer-name">Libia Marciales</h3>
+                        <p class="trainer-description">
+                            En el otro extremo del espectro pedagógico, y complementando de manera esencial la estructura 
+                            de formación del club, se encuentra la entrenadora Libia. Su rol no es el de la forja a alta 
+                            presión, sino el de la cimentación y el cultivo. Libia se especializa en el área fundamental 
+                            de la enseñanza, actuando como la base receptiva y nutritiva sobre la cual se construyen las 
+                            futuras promesas. Su labor es recibir a los nadadores, especialmente a aquellos en etapas de 
+                            iniciación y desarrollo, con una calidez y un cuidado genuinos, creando un ambiente sano, 
+                            positivo y de confianza donde el aprendizaje florece sin el lastre del temor o la ansiedad excesiva.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <section>
+        <section class="c-section cc-white">
+                <div .-wf--section-divider--variant="only-bottom" class="c-section-divider">
+                    <div class="c-corchete cc-divider cc-bottom w-variant-b23e513b-f70c-edc7-deb1-0b18991d20de"></div>
+                    <div class="c-corchete-connector w-variant-b23e513b-f70c-edc7-deb1-0b18991d20de"></div>
+                    <div class="c-corchete cc-divider cc-top"></div>
+                </div>
+                <div class="c-container">
+                    <div class="c-values-wrapper">
+                        <div class="c-grid">
+                            <h2 id="w-node-_8cd56189-7a31-8fc4-e376-f82a9dba023f-50bc8209" class="c-title-4">
+                                Nuestros<br/>
+                                <span class="c-text-gray-500">Valores</span>
+                            </h2>
+                            <div id="w-node-a84ea70c-47b2-407f-07f6-dbbd35ee9e8d-50bc8209" class="c-values_list">
+                                <div class="c-feature_list-item">
+                                    <div class="c-hide">
+                                        <div class="c-value_icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 13 10" fill="none" class="c-feature_icon-lottie cc-icon">
+                                                <line x1="4.16924" y1="0.201172" x2="4.16924" y2="9.80117" stroke="currentColor" stroke-width="0.4"></line>
+                                                <line x1="12.7692" y1="2.40117" x2="0.769226" y2="2.40117" stroke="currentColor" stroke-width="0.4"></line>
+                                                <line x1="9.36925" y1="0.201172" x2="9.36925" y2="9.80117" stroke="currentColor" stroke-width="0.4"></line>
+                                                <line x1="12.7692" y1="7.60234" x2="0.769226" y2="7.60234" stroke="currentColor" stroke-width="0.4"></line>
+                                                <circle cx="6.76924" cy="5.00117" r="0.8" fill="currentColor"></circle>
+                                                <circle cx="11.9693" cy="5.00117" r="0.8" fill="currentColor"></circle>
+                                                <circle cx="1.56923" cy="5.00117" r="0.8" fill="currentColor"></circle>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="c-text-1 cc-inline">
+                                        <span class="c-text-gray-900">Innovación:</span>
+Trabajamos para elevar el rendimiento acuático al máximo nivel. Cada entrenamiento, cada técnica y cada detalle está diseñado para fortalecer la confianza de nuestros nadadores, entrenadores y aliados. Actuamos con disciplina, responsabilidad y un compromiso absoluto con la seguridad y el respeto dentro y fuera del agua.
+                                    </div>
+                                </div>
+                                <div class="c-feature_list-item">
+                                    <div class="c-hide">
+                                        <div class="c-value_icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 17 17" fill="none" class="c-feature_icon-lottie cc-icon">
+                                                <path d="M6.7692 12.0977H10.7692M7.43587 14.0977H10.1025M6.7692 10.0977C6.76987 8.76432 6.43654 8.43099 5.7692 7.76432C5.10187 7.09766 4.78587 6.42232 4.7692 5.43099C4.73787 3.39766 6.10254 2.09766 8.7692 2.09766C11.4365 2.09766 12.8019 3.39766 12.7692 5.43099C12.7539 6.42232 12.4359 7.09766 11.7692 7.76432C11.1032 8.43099 10.7699 8.76432 10.7692 10.0977" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="c-feature_list-item">
+                                    <div class="c-hide">
+                                        <div class="c-value_icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 17 17" fill="none" class="c-feature_icon-lottie cc-icon">
+                                                <path d="M13.1505 4.00877C12.7888 3.14517 12.1799 2.40773 11.4004 1.88909C10.6209 1.37045 9.70552 1.09375 8.76924 1.09375C7.83296 1.09375 6.91756 1.37045 6.13805 1.88909C5.35854 2.40773 4.74969 3.14517 4.38799 4.00877C3.60687 4.36579 2.94478 4.93973 2.48051 5.66228C2.01625 6.38483 1.76936 7.22555 1.76924 8.0844C1.76299 10.4719 3.76924 12.5344 6.15299 12.5969C6.8862 12.6146 7.61263 12.453 8.26924 12.1263V14.5969C8.26924 14.7295 8.32192 14.8567 8.41569 14.9504C8.50946 15.0442 8.63663 15.0969 8.76924 15.0969C8.90185 15.0969 9.02903 15.0442 9.12279 14.9504C9.21656 14.8567 9.26924 14.7295 9.26924 14.5969V12.1263C9.89085 12.4349 10.5753 12.5959 11.2692 12.5969H11.383C13.7692 12.5344 15.7761 10.4719 15.7692 8.0844C15.7691 7.22555 15.5222 6.38483 15.058 5.66228C14.5937 4.93973 13.9316 4.36579 13.1505 4.00877ZM11.3599 11.5969C10.6142 11.6163 9.88186 11.3974 9.26924 10.9719V8.4094L11.993 7.04815C12.0518 7.01876 12.1042 6.97809 12.1472 6.92846C12.1903 6.87882 12.2231 6.82119 12.2439 6.75886C12.2647 6.69653 12.273 6.63072 12.2683 6.56518C12.2636 6.49964 12.2461 6.43566 12.2167 6.3769C12.1874 6.31813 12.1467 6.26573 12.0971 6.22268C12.0474 6.17963 11.9898 6.14678 11.9275 6.126C11.8651 6.10522 11.7993 6.09693 11.7338 6.10158C11.6682 6.10624 11.6043 6.12376 11.5455 6.15315L9.26924 7.28815V5.5969C9.26924 5.46429 9.21656 5.33711 9.12279 5.24334C9.02903 5.14957 8.90185 5.0969 8.76924 5.0969C8.63663 5.0969 8.50946 5.14957 8.41569 5.24334C8.32192 5.33711 8.26924 5.46429 8.26924 5.5969V8.78815L5.99299 7.6494C5.87431 7.59005 5.73691 7.58029 5.61103 7.62225C5.48514 7.66421 5.38108 7.75446 5.32174 7.87315C5.2624 7.99183 5.25263 8.12923 5.2946 8.25511C5.33656 8.38099 5.42681 8.48505 5.54549 8.5444L8.26924 9.90565V10.9681C7.65677 11.3939 6.92429 11.6129 6.17862 11.5931C4.32549 11.5488 2.76424 9.9419 2.76924 8.0869C2.76877 7.38926 2.97765 6.70753 3.36886 6.1299C3.76007 5.55228 4.31561 5.10534 4.96362 4.8469C5.02862 4.82079 5.08742 4.78132 5.13619 4.73104C5.18496 4.68076 5.22263 4.62079 5.24674 4.55502C5.51048 3.83277 5.98986 3.20904 6.61994 2.76834C7.25002 2.32765 8.00034 2.09129 8.76924 2.09129C9.53814 2.09129 10.2885 2.32765 10.9185 2.76834C11.5486 3.20904 12.028 3.83277 12.2917 4.55502C12.3159 4.62079 12.3535 4.68076 12.4023 4.73104C12.4511 4.78132 12.5099 4.82079 12.5749 4.8469C13.2228 5.10548 13.7782 5.55246 14.1694 6.13005C14.5606 6.70764 14.7695 7.3893 14.7692 8.0869C14.7742 9.9419 13.213 11.5488 11.3599 11.5969Z" fill="currentColor"></path>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="c-text-1 cc-inline">
+                                        <span class="c-text-gray-900">Sostenibilidad: </span>
+                                      Impulsamos un deporte consciente. Promovemos el uso responsable de los recursos, el cuidado del entorno y el respeto por los escenarios donde competimos y entrenamos. Creemos en formar atletas que construyan un futuro más limpio, saludable y equilibrado.
+                                </div>
+                                <div class="c-feature_list-item">
+                                    <div class="c-hide">
+                                        <div class="c-value_icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 17 17" fill="none" class="c-feature_icon-lottie cc-icon">
+                                                <path d="M3.76923 10.5977V10.0977H2.76923V10.5977C2.76923 11.5259 3.13797 12.4162 3.79435 13.0725C4.45073 13.7289 5.34097 14.0977 6.26923 14.0977H7.76923V13.0977H6.26923C5.60618 13.0977 4.9703 12.8343 4.50146 12.3654C4.03262 11.8966 3.76923 11.2607 3.76923 10.5977ZM12.7692 5.59766V6.09766H13.7692V5.59766C13.7692 4.6694 13.4005 3.77916 12.7441 3.12278C12.0877 2.46641 11.1975 2.09766 10.2692 2.09766H8.76923V3.09766H10.2692C10.5975 3.09766 10.9226 3.16232 11.2259 3.28796C11.5292 3.4136 11.8048 3.59774 12.037 3.82989C12.2691 4.06204 12.4533 4.33763 12.5789 4.64095C12.7046 4.94426 12.7692 5.26935 12.7692 5.59766ZM6.26923 5.59766H3.26923C2.8714 5.59766 2.48987 5.75569 2.20857 6.037C1.92726 6.3183 1.76923 6.69983 1.76923 7.09766V8.09766H2.76923V7.09766C2.76923 6.96505 2.8219 6.83787 2.91567 6.7441C3.00944 6.65034 3.13662 6.59766 3.26923 6.59766H6.26923C6.40183 6.59766 6.52901 6.65034 6.62278 6.7441C6.71655 6.83787 6.76923 6.96505 6.76923 7.09766V8.09766H7.76923V7.09766C7.76923 6.69983 7.61119 6.3183 7.32989 6.037C7.04858 5.75569 6.66705 5.59766 6.26923 5.59766ZM4.76923 5.09766C5.16479 5.09766 5.55147 4.98036 5.88037 4.7606C6.20926 4.54083 6.46561 4.22848 6.61699 3.86302C6.76836 3.49757 6.80797 3.09544 6.7308 2.70748C6.65363 2.31951 6.46314 1.96315 6.18344 1.68344C5.90373 1.40374 5.54737 1.21326 5.15941 1.13609C4.77144 1.05892 4.36931 1.09852 4.00386 1.2499C3.63841 1.40127 3.32605 1.65762 3.10629 1.98652C2.88652 2.31541 2.76923 2.70209 2.76923 3.09766C2.76923 3.62809 2.97994 4.1368 3.35501 4.51187C3.73009 4.88694 4.23879 5.09766 4.76923 5.09766ZM4.76923 2.09766C4.96701 2.09766 5.16035 2.15631 5.3248 2.26619C5.48925 2.37607 5.61742 2.53225 5.69311 2.71497C5.76879 2.8977 5.7886 3.09877 5.75001 3.29275C5.71143 3.48673 5.61619 3.66491 5.47633 3.80476C5.33648 3.94462 5.1583 4.03986 4.96432 4.07844C4.77034 4.11703 4.56927 4.09722 4.38654 4.02154C4.20382 3.94585 4.04764 3.81768 3.93776 3.65323C3.82788 3.48878 3.76923 3.29544 3.76923 3.09766C3.76923 2.83244 3.87458 2.57809 4.06212 2.39055C4.24966 2.20301 4.50401 2.09766 4.76923 2.09766ZM14.2692 12.5977H11.2692C10.8714 12.5977 10.4899 12.7557 10.2086 13.037C9.92726 13.3183 9.76923 13.6998 9.76923 14.0977V15.0977H10.7692V14.0977C10.7692 13.965 10.8219 13.8379 10.9157 13.7441C11.0094 13.6503 11.1366 13.5977 11.2692 13.5977H14.2692C14.4018 13.5977 14.529 13.6503 14.6228 13.7441C14.7165 13.8379 14.7692 13.965 14.7692 14.0977V15.0977H15.7692V14.0977C15.7692 13.6998 15.6112 13.3183 15.3299 13.037C15.0486 12.7557 14.6671 12.5977 14.2692 12.5977ZM10.7692 10.0977C10.7692 10.4932 10.8865 10.8799 11.1063 11.2088C11.326 11.5377 11.6384 11.794 12.0039 11.9454C12.3693 12.0968 12.7714 12.1364 13.1594 12.0592C13.5474 11.9821 13.9037 11.7916 14.1834 11.5119C14.4631 11.2322 14.6536 10.8758 14.7308 10.4878C14.808 10.0999 14.7684 9.69774 14.617 9.33229C14.4656 8.96684 14.2093 8.65448 13.8804 8.43472C13.5515 8.21496 13.1648 8.09766 12.7692 8.09766C12.2388 8.09766 11.7301 8.30837 11.355 8.68344C10.9799 9.05852 10.7692 9.56722 10.7692 10.0977ZM13.7692 10.0977C13.7692 10.2954 13.7106 10.4888 13.6007 10.6532C13.4908 10.8177 13.3346 10.9458 13.1519 11.0215C12.9692 11.0972 12.7681 11.117 12.5741 11.0784C12.3802 11.0399 12.202 10.9446 12.0621 10.8048C11.9223 10.6649 11.827 10.4867 11.7884 10.2927C11.7499 10.0988 11.7697 9.8977 11.8453 9.71497C11.921 9.53225 12.0492 9.37607 12.2137 9.26619C12.3781 9.15631 12.5714 9.09766 12.7692 9.09766C13.0344 9.09766 13.2888 9.20301 13.4763 9.39055C13.6639 9.57809 13.7692 9.83244 13.7692 10.0977Z" fill="currentColor"></path>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <br>
+                                    <div class="c-text-1 cc-inline">
+                                        <span class="c-text-gray-900">Colaboración: </span>
+                                     El agua nos une. Fomentamos la colaboración entre deportistas, cuerpo técnico y comunidad, entendiendo que las grandes marcas se logran en equipo. Practicamos la empatía, la solidaridad y el espíritu de apoyo constante que define a los verdaderos clubes de alto rendimiento.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div .-wf--section-divider--variant="only-top" class="c-section-divider">
+                    <div class="c-corchete cc-divider w-variant-308e34e3-5b13-45c5-7ad4-21e7c71ab49a cc-bottom"></div>
+                    <div class="c-corchete-connector w-variant-308e34e3-5b13-45c5-7ad4-21e7c71ab49a"></div>
+                    <div class="c-corchete cc-divider w-variant-308e34e3-5b13-45c5-7ad4-21e7c71ab49a cc-top"></div>
+                </div>
+            </section>
+    
+   <footer class="footer">
+    <div class="c-container">
+        <div class="footer_grid">
+            <div id="w-node-_0c2f0453-5526-a1c1-1c1f-38b2b3767892-b376788f" class="c-footer_col">
+                <div class="c-footer_col-title">
+                    <div class="c-text-2">LA FUERZA</div>
+                </div>
+                <div class="c-footer_links-wrapper">
+                    <a href="index.html" class="c-footer_link w--current">Inicio</a>
+                    <a href="Html/Conocenos.html" class="c-footer_link">Conocenos</a>
+                    <a href="Html/Novedades.html" class="c-footer_link">Novedades</a>
+                    <a href="Html/Tienda.html" class="c-footer_link">Tienda</a>
+                        <div class="c-nav_link-arrow">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7 8" fill="none" class="c-custom-svg">
+                            </svg>
+                        </div>
+                    </a>
+                    <a href="Html/Iniciar session.html " target="_blank" class="c-footer_link w-inline-block">
+                        <div>Iniciar Sesión</div>
+                        <div class="c-nav_link-arrow">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7 8" fill="none" class="c-custom-svg">
+                            </svg>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="c-footer_col cc-center">
+                <div class="c-footer_col-title cc-center">
+                    <div class="c-text-2">ESTÁ EN</div>
+                </div>
+                <div class="c-footer_newsletter-wrapper">
+                    <div id="newsletter-form-container" class="c-newsletter-embed"></div>
+                    <div class="c-button cc-input">
+                        <div class="c-button_inner">
+                            <div class="c-button_text cc-input"><a href="Html/Contactos.html">Contactanos</a> </div>
+                        </div>
+
+                        </button>
+                    </div>
+                </div>
+              <div id="w-node-_0c2f0453-5526-a1c1-1c1f-38b2b37678ad-b376788f" class="c-footer_socials">
+    <div class="c-made-by">
+        <div class="c-text-4">Desarrollado por N.E.C.P</div>
+    </div>
+</div>
+
+
+                <div class="c-decoration-hero_top cc-footer-mobile">
+                    <div class="c-container">
+                        <div class="c-grid">
+                            <div class="c-text-2"></div>
+                            <div class="c-text-2"><span class="c-text-orange-700">LA FUERZA ESTÁ EN TUS PIES</span></div>
+                            <div class="c-text-2"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+<div class="c-footer_col cc-last">
+                <div class="c-footer_col-title">
+                    <div class="c-text-2">TUS PIES</div>
+                </div>
+                <div class="c-footer_locations-wrapper">
+                    <div class="c-footer_location">
+                        <div class="c-text-3"><a href="https://www.google.com/maps/place/Cafeter%C3%ADa+complejo+acu%C3%A1tico/@7.8925744,-72.5059867,17z/.=!3m1!4b1!4m6!3m5!1s0x8e6645eb28ab27d3:0xea13015c70387a1d!8m2!3d7.8925744!4d-72.5011104!16s%2Fg%2F11rn6v_k3x?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D">Complejo Aquatico</a></div>
+                    </div>
+                    <div class="c-footer_location">
+                        <div class="c-text-3"><a href="https://www.google.com/maps/place/Plaza+de+Banderas/@7.8935361,-72.5049132,17z/.=!3m1!4b1!4m6!3m5!1s0x8e664573e48c3c85:0xd81da96167d9d54e!8m2!3d7.8935361!4d-72.5023329!16s%2Fg%2F1tsyl78k?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D">Nuestra Direccion especifica</a></div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=6837014cb4393ef80839a179"
+        type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.prod.website-files.com/6837014cb4393ef80839a179/js/webflow.f8aaeb20.72948ff5b7606f47.js"
+        type="text/javascript"></script><!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MWZXBK6F" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Start of HubSpot Embed Code -->
+    <script type="text/javascript" id="hs-script-loader" async defer
+        src="//js-eu1.hs-scripts.com/144895398.js"></script>
+    <!-- End of HubSpot Embed Code -->
+
+    <script>
+        (function () {
+            function addScript(key, src, module) {
+                const s = document.createElement("script");
+                if (module) s.setAttribute("type", "module");
+                s.setAttribute("src", src);
+                document.body.appendChild(s);
+                const event = new Event(`${key}ScriptLoaded`);
+                s.onload = () => document.dispatchEvent(event)
+            }
+
+            const DEBUG_URL = 'http://localhost:3000'
+            const STAGE_URL = `https://heimdall-power-custom-code.vercel.app` //DO NOT MODIFY THIS URL IF YOU DON'T KNOW WHAT YOU ARE DOING
+            const PRODUCTION_URL = `https://heimdall-power-custom-code-refokus.vercel.app` //DO NOT MODIFY THIS URL IF YOU DON'T KNOW WHAT YOU ARE DOING
+            const url = new URL(window.location)
+            const urlParams = url.searchParams;
+            const debug = urlParams.get("debug");
+            const remoteDebug = urlParams.get("remoteDebug")
+            const path = window.location.pathname.split("/")[1];
+
+            if (debug !== null) {
+                addScript('client', `${DEBUG_URL}/@vite/client`, true);
+                addScript('main', `${DEBUG_URL}/src/main.js`, true);
+            } else if (remoteDebug) {
+                addScript('client', `${remoteDebug}/@vite/client`, true)
+                addScript('main', `${remoteDebug}/src/main.js`, true)
+            } else if (url.host.match(/webflow\.io/)) {
+                addScript('main', `${STAGE_URL}/main.js`, true);
+            } else {
+                addScript('main', `${PRODUCTION_URL}/main.js`, true);
+            }
+        })()
+
+    </script>
+    <script>
+        document.querySelectorAll('.c-tabs_link').forEach(tab => {
+            tab.addEventListener('mouseover', () => {
+                $(tab).trigger('tap');
+            })
+        })
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Scroll Animation
+            const scrollElements = document.querySelectorAll('.scroll-animate');
+            
+            const scrollObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        scrollObserver.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -100px 0px'
+            });
+            
+            scrollElements.forEach(el => scrollObserver.observe(el));
+            
+            // Ripple Button Effect
+            const buttons = document.querySelectorAll('.ripple-button');
+            buttons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    const ripple = document.createElement('span');
+                    const rect = this.getBoundingClientRect();
+                    const size = Math.max(rect.width, rect.height);
+                    const x = e.clientX - rect.left - size / 2;
+                    const y = e.clientY - rect.top - size / 2;
+                    
+                    ripple.style.cssText = `
+                        width: ${size}px;
+                        height: ${size}px;
+                        left: ${x}px;
+                        top: ${y}px;
+                    `;
+                    ripple.classList.add('ripple');
+                    
+                    this.appendChild(ripple);
+                    
+                    setTimeout(() => {
+                        ripple.remove();
+                    }, 600);
+                });
+            });
+            
+            // Counter Animation
+            const counters = document.querySelectorAll('.stat-number');
+            
+            const startCounter = (counter) => {
+                const target = parseInt(counter.getAttribute('.-count'));
+                const count = +counter.innerText;
+                const increment = target / 100;
+                
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + increment);
+                    setTimeout(() => startCounter(counter), 20);
+                } else {
+                    counter.innerText = target;
+                }
+            };
+            
+            const counterObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        startCounter(entry.target);
+                        counterObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            counters.forEach(counter => counterObserver.observe(counter));
+            
+            // Parallax Effect
+            window.addEventListener('scroll', function() {
+                const scrolled = window.pageYOffset;
+                const heroImage = document.querySelector('.main-hero-image');
+                const waterAnim = document.querySelector('.water-animation');
+                
+                if (heroImage) {
+                    const rate = scrolled * -0.3;
+                    heroImage.style.transform = `perspective(1000px) rotateY(-15deg) rotateX(5deg) translateY(${rate}px)`;
+                }
+                
+                if (waterAnim) {
+                    waterAnim.style.transform = `translateY(${scrolled * -0.1}px)`;
+                }
+                
+                // Floating elements animation
+                const floatElements = document.querySelectorAll('.floating-element');
+                floatElements.forEach((el, index) => {
+                    const speed = 0.2 + (index * 0.1);
+                    el.style.transform = `translateY(${scrolled * speed * -0.1}px)`;
+                });
+            });
+            
+            // Image hover enhancement
+            const images = document.querySelectorAll('.about-image-item img, .trainer-image img');
+            images.forEach(img => {
+                img.addEventListener('mouseenter', function() {
+                    this.style.transform = this.classList.contains('main-hero-image') 
+                        ? 'perspective(1000px) rotateY(-5deg) rotateX(2deg) scale(1.02)' 
+                        : 'scale(1.1)';
+                });
+                
+                img.addEventListener('mouseleave', function() {
+                    this.style.transform = this.classList.contains('main-hero-image') 
+                        ? 'perspective(1000px) rotateY(-15deg) rotateX(5deg)' 
+                        : 'scale(1)';
+                });
+            });
+            
+            // Card hover effects
+            const cards = document.querySelectorAll('.trainer-card');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-15px)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+            
+            // Smooth scroll for navigation
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if(targetId !== '#') {
+                        const targetElement = document.querySelector(targetId);
+                        if(targetElement) {
+                            window.scrollTo({
+                                top: targetElement.offsetTop - 100,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+            
+            // Auto animation for some elements
+            setTimeout(() => {
+                document.querySelectorAll('.scroll-animate').forEach(el => {
+                    if (el.getBoundingClientRect().top < window.innerHeight * 0.8) {
+                        el.classList.add('visible');
+                    }
+                });
+            }, 500);
+        });
+    </script>
+</body>
+</html>
